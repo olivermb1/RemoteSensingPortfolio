@@ -1,0 +1,70 @@
+[OK  ] Python version
+       Python 3.13.16 (/usr/bin/python3).
+[info] Python packages
+       Found: rasterio 1.5.2, requests 2.34.2, numpy 2.5.3. Not installed: earthaccess,
+       pyproj. earthaccess is optional for this doctor, but it is the easiest way to
+       search and log in.
+[OK  ] GDAL for streaming
+       rasterio: GDAL 3.12.2.
+[WARN] GDAL settings for streaming HLS
+       Not set: GDAL_HTTP_COOKIEFILE, GDAL_HTTP_COOKIEJAR, GDAL_DISABLE_READDIR_ON_OPEN.
+       Without a cookie jar every piece GDAL reads goes through the Earthdata Login
+       redirect again (slow, and heavy use gets throttled); without
+       GDAL_DISABLE_READDIR_ON_OPEN, GDAL first tries to list the folder, which LP DAAC
+       does not serve, so every open costs extra failed requests.
+       Fix: Set these before starting Python or QGIS (in QGIS: Settings > Options >
+       System > Environment):
+       GDAL_HTTP_NETRC=YES
+       GDAL_HTTP_COOKIEFILE=/root/.hlsdoctor_cookies.txt
+       GDAL_HTTP_COOKIEJAR=/root/.hlsdoctor_cookies.txt
+       GDAL_DISABLE_READDIR_ON_OPEN=EMPTY_DIR
+       CPL_VSIL_CURL_ALLOWED_EXTENSIONS=TIF
+       GDAL_HTTP_MAX_RETRY=4
+       GDAL_HTTP_RETRY_DELAY=2
+       In Python with rasterio you can instead wrap reads in
+       rasterio.Env(**hlsdoctor.env.GDAL_RECOMMENDED).
+       More: python -m hlsdoctor gotchas gdal-cookies
+[WARN] Proxy and certificate settings
+       GDAL_CURL_CA_BUNDLE (/root/.local/lib/python3.13/site-
+       packages/certifi/cacert.pem) and CURL_CA_BUNDLE (/root/.ccr/ca-bundle.crt)
+       differ; GDAL uses GDAL_CURL_CA_BUNDLE, so GDAL and curl may trust different
+       certificates; SSL_CERT_FILE=/root/.ccr/ca-bundle.crt;
+       REQUESTS_CA_BUNDLE=/root/.ccr/ca-bundle.crt; CURL_CA_BUNDLE=/root/.ccr/ca-
+       bundle.crt; GDAL_CURL_CA_BUNDLE=/root/.local/lib/python3.13/site-
+       packages/certifi/cacert.pem; HTTPS_PROXY is set (traffic goes through a proxy).
+       Fix: Point both at the same CA bundle (your organisation's, if you are behind a
+       company proxy).
+       More: python -m hlsdoctor gotchas tls
+[FAIL] Earthdata login in ~/.netrc
+       No netrc file found (looked for /root/.netrc).
+       Fix: Make a free account at https://urs.earthdata.nasa.gov, then run: python -c
+       "import earthaccess; earthaccess.login(persist=True)" or create the file yourself
+       with the line: machine urs.earthdata.nasa.gov login YOUR_USERNAME password
+       YOUR_PASSWORD
+       More: python -m hlsdoctor gotchas netrc-missing
+[skip] EARTHDATA_USERNAME / EARTHDATA_PASSWORD
+       Not set (fine when ~/.netrc is set up).
+[skip] Earthdata token
+       No token given (set EARTHDATA_TOKEN or pass --token-file). Tokens are optional; a
+       netrc login is enough.
+[FAIL] Reach Earthdata Login (urs.earthdata.nasa.gov)
+       The network's proxy refused to connect to urs.earthdata.nasa.gov (Tunnel
+       connection failed: 403 Forbidden).
+       Fix: A firewall or proxy blocks NASA Earthdata here. Ask IT to allow
+       *.earthdata.nasa.gov and *.earthdatacloud.nasa.gov, or try another network.
+       More: python -m hlsdoctor gotchas network
+[FAIL] Reach CMR search (cmr.earthdata.nasa.gov)
+       The network's proxy refused to connect to cmr.earthdata.nasa.gov (Tunnel
+       connection failed: 403 Forbidden).
+       Fix: A firewall or proxy blocks NASA Earthdata here. Ask IT to allow
+       *.earthdata.nasa.gov and *.earthdatacloud.nasa.gov, or try another network.
+       More: python -m hlsdoctor gotchas network
+[FAIL] Reach LP DAAC data (data.lpdaac.earthdatacloud.nasa.gov)
+       The network's proxy refused to connect to data.lpdaac.earthdatacloud.nasa.gov
+       (Tunnel connection failed: 403 Forbidden).
+       Fix: A firewall or proxy blocks NASA Earthdata here. Ask IT to allow
+       *.earthdata.nasa.gov and *.earthdatacloud.nasa.gov, or try another network.
+       More: python -m hlsdoctor gotchas network
+
+4 problem(s) stop HLS access on this machine. Fix the FAIL lines first, top to bottom.
+  2 pass, 2 warn, 4 fail, 2 skip, 1 info
