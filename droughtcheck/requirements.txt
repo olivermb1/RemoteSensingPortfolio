@@ -1,0 +1,8 @@
+numpy
+scipy
+rasterio
+matplotlib
+climate-indices>=2.3   # optional: used for SPI/SPEI when installed; a built-in engine gives the same numbers
+fsspec                 # fetch temps (NASA POWER Zarr)
+zarr<3
+aiohttp

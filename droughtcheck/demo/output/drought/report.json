@@ -1,0 +1,280 @@
+{
+ "info": {
+  "backend": "climate-indices",
+  "calibration": [
+   1991,
+   2020
+  ],
+  "class_scale": 3,
+  "threshold": -1.0,
+  "min_duration": 2,
+  "events_since": "2000-01",
+  "first_month": "1981-01",
+  "last_month": "2026-08",
+  "latest_month": "2026-08",
+  "missing_months": [
+   "2023-12",
+   "2024-07"
+  ],
+  "pet": "hargreaves"
+ },
+ "findings": [
+  "2026-08: SPI-3 puts 99% of the area in moderate or worse drought (median SPI -1.78).",
+  "Worst area-wide droughts by SPI-3 magnitude: 1984-03 to 1984-08 (6 months, peak -2.47); 2000-03 to 2000-07 (5 months, peak -2.15); 2009-07 to 2009-10 (4 months, peak -2.52); 1993-09 to 1994-01 (5 months, peak -2.15); 1985-10 to 1986-03 (6 months, peak -1.76).",
+  "99% of pixels are in a drought spell that is still running (longest 3 months).",
+  "Months with no rainfall data (indices that span them are blank): 2023-12, 2024-07."
+ ],
+ "latest_class_counts": {
+  "Extreme drought": 50,
+  "Severe drought": 257,
+  "Moderate drought": 48,
+  "Near normal": 2,
+  "Moderately wet": 0,
+  "Very wet": 0,
+  "Extremely wet": 0
+ },
+ "events": [
+  {
+   "start": 11,
+   "end": 12,
+   "duration": 2,
+   "magnitude": 0.4091,
+   "intensity": 0.2045,
+   "peak": -1.2375,
+   "start_month": "1981-12",
+   "end_month": "1982-01",
+   "peak_month": "1981-12"
+  },
+  {
+   "start": 38,
+   "end": 43,
+   "duration": 6,
+   "magnitude": 6.3307,
+   "intensity": 1.0551,
+   "peak": -2.4716,
+   "start_month": "1984-03",
+   "end_month": "1984-08",
+   "peak_month": "1984-05"
+  },
+  {
+   "start": 57,
+   "end": 62,
+   "duration": 6,
+   "magnitude": 2.8591,
+   "intensity": 0.4765,
+   "peak": -1.7586,
+   "start_month": "1985-10",
+   "end_month": "1986-03",
+   "peak_month": "1985-10"
+  },
+  {
+   "start": 80,
+   "end": 83,
+   "duration": 4,
+   "magnitude": 2.4648,
+   "intensity": 0.6162,
+   "peak": -2.2909,
+   "start_month": "1987-09",
+   "end_month": "1987-12",
+   "peak_month": "1987-10"
+  },
+  {
+   "start": 115,
+   "end": 117,
+   "duration": 3,
+   "magnitude": 0.5616,
+   "intensity": 0.1872,
+   "peak": -1.3038,
+   "start_month": "1990-08",
+   "end_month": "1990-10",
+   "peak_month": "1990-08"
+  },
+  {
+   "start": 152,
+   "end": 156,
+   "duration": 5,
+   "magnitude": 3.1508,
+   "intensity": 0.6302,
+   "peak": -2.1508,
+   "start_month": "1993-09",
+   "end_month": "1994-01",
+   "peak_month": "1993-10"
+  },
+  {
+   "start": 193,
+   "end": 194,
+   "duration": 2,
+   "magnitude": 0.4162,
+   "intensity": 0.2081,
+   "peak": -1.2807,
+   "start_month": "1997-02",
+   "end_month": "1997-03",
+   "peak_month": "1997-02"
+  },
+  {
+   "start": 215,
+   "end": 217,
+   "duration": 3,
+   "magnitude": 0.5851,
+   "intensity": 0.195,
+   "peak": -1.3833,
+   "start_month": "1998-12",
+   "end_month": "1999-02",
+   "peak_month": "1999-02"
+  },
+  {
+   "start": 221,
+   "end": 222,
+   "duration": 2,
+   "magnitude": 1.2251,
+   "intensity": 0.6126,
+   "peak": -1.753,
+   "start_month": "1999-06",
+   "end_month": "1999-07",
+   "peak_month": "1999-07"
+  },
+  {
+   "start": 230,
+   "end": 234,
+   "duration": 5,
+   "magnitude": 4.4269,
+   "intensity": 0.8854,
+   "peak": -2.1462,
+   "start_month": "2000-03",
+   "end_month": "2000-07",
+   "peak_month": "2000-04"
+  },
+  {
+   "start": 259,
+   "end": 260,
+   "duration": 2,
+   "magnitude": 0.387,
+   "intensity": 0.1935,
+   "peak": -1.2646,
+   "start_month": "2002-08",
+   "end_month": "2002-09",
+   "peak_month": "2002-09"
+  },
+  {
+   "start": 282,
+   "end": 284,
+   "duration": 3,
+   "magnitude": 0.4714,
+   "intensity": 0.1571,
+   "peak": -1.3937,
+   "start_month": "2004-07",
+   "end_month": "2004-09",
+   "peak_month": "2004-08"
+  },
+  {
+   "start": 298,
+   "end": 300,
+   "duration": 3,
+   "magnitude": 1.2594,
+   "intensity": 0.4198,
+   "peak": -1.6738,
+   "start_month": "2005-11",
+   "end_month": "2006-01",
+   "peak_month": "2005-12"
+  },
+  {
+   "start": 323,
+   "end": 324,
+   "duration": 2,
+   "magnitude": 0.3772,
+   "intensity": 0.1886,
+   "peak": -1.2526,
+   "start_month": "2007-12",
+   "end_month": "2008-01",
+   "peak_month": "2008-01"
+  },
+  {
+   "start": 328,
+   "end": 331,
+   "duration": 4,
+   "magnitude": 2.3487,
+   "intensity": 0.5872,
+   "peak": -1.943,
+   "start_month": "2008-05",
+   "end_month": "2008-08",
+   "peak_month": "2008-06"
+  },
+  {
+   "start": 337,
+   "end": 339,
+   "duration": 3,
+   "magnitude": 0.5186,
+   "intensity": 0.1729,
+   "peak": -1.2464,
+   "start_month": "2009-02",
+   "end_month": "2009-04",
+   "peak_month": "2009-03"
+  },
+  {
+   "start": 342,
+   "end": 345,
+   "duration": 4,
+   "magnitude": 3.3055,
+   "intensity": 0.8264,
+   "peak": -2.5182,
+   "start_month": "2009-07",
+   "end_month": "2009-10",
+   "peak_month": "2009-08"
+  },
+  {
+   "start": 415,
+   "end": 417,
+   "duration": 3,
+   "magnitude": 1.1554,
+   "intensity": 0.3851,
+   "peak": -1.7902,
+   "start_month": "2015-08",
+   "end_month": "2015-10",
+   "peak_month": "2015-09"
+  },
+  {
+   "start": 435,
+   "end": 437,
+   "duration": 3,
+   "magnitude": 0.6496,
+   "intensity": 0.2165,
+   "peak": -1.3266,
+   "start_month": "2017-04",
+   "end_month": "2017-06",
+   "peak_month": "2017-04"
+  },
+  {
+   "start": 458,
+   "end": 459,
+   "duration": 2,
+   "magnitude": 0.6017,
+   "intensity": 0.3008,
+   "peak": -1.5283,
+   "start_month": "2019-03",
+   "end_month": "2019-04",
+   "peak_month": "2019-03"
+  },
+  {
+   "start": 510,
+   "end": 511,
+   "duration": 2,
+   "magnitude": 0.4307,
+   "intensity": 0.2153,
+   "peak": -1.3559,
+   "start_month": "2023-07",
+   "end_month": "2023-08",
+   "peak_month": "2023-08"
+  },
+  {
+   "start": 546,
+   "end": 547,
+   "duration": 2,
+   "magnitude": 1.0784,
+   "intensity": 0.5392,
+   "peak": -1.8941,
+   "start_month": "2026-07",
+   "end_month": "2026-08",
+   "peak_month": "2026-08"
+  }
+ ]
+}
