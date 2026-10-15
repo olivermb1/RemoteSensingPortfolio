@@ -10,7 +10,7 @@ CORE = os.path.join(HERE, "..", "qamask")
 
 dst = os.path.join(PLUGIN, "qamask")
 shutil.rmtree(dst, ignore_errors=True)
-shutil.copytree(CORE, dst, ignore=shutil.ignore_patterns("__pycache__", "cli.py", "__main__.py", "gee_build.py"))
+shutil.copytree(CORE, dst, ignore=shutil.ignore_patterns("__pycache__", "cli.py", "__main__.py", "gee_build.py", "format_flags.py"))
 out = os.path.join(HERE, "qa_mask_builder.zip")
 with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
     for root, dirs, files in os.walk(PLUGIN):

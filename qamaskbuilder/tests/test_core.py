@@ -137,3 +137,28 @@ def test_apply_follows_the_crs_fix(tmp_path):
     assert io.info(out).epsg == 32719
     a = io.read(out)
     assert (a[io.read(m) != 1] == 255).all()
+
+
+def test_ecostress_qc_follows_the_v2_guide():
+    # ECOL2 User Guide V2 rev 4.2: QC holds no cloud information in collection 2, fill is 0
+    p = get_product("ecostress_lste_qc")
+    assert "cloud" not in p.flags
+    assert not any("cloud" in flags for flags in p.presets.values())
+    with pytest.raises(KeyError):
+        p.resolve(["cloud"])
+    good = 0b11 << 14 | 0b10 << 12 | 0b01 << 8          # LST < 1 K, emissivity good, nominal opacity
+    degraded = good | 0b01                               # mandatory QA 01
+    poor_lst = 0b10 << 12 | 0b01 << 8                    # LST accuracy 00 (> 2 K)
+    not_produced = good | 0b11
+    bad_l1b = good | 0b11 << 2
+    qa = np.array([[0, good, degraded, poor_lst, not_produced, bad_l1b]], np.uint16)
+    assert core.build_mask(qa, p).tolist() == [[255, 1, 1, 0, 0, 0]]          # default 'accurate'
+    assert core.build_mask(qa, p, ["strict"]).tolist() == [[255, 1, 0, 0, 0, 0]]
+    assert core.build_mask(qa, p, ["produced"]).tolist() == [[255, 1, 1, 1, 0, 0]]
+
+
+def test_ecostress_cloud_layer():
+    p = get_product("ecostress_cloud")
+    assert core.build_mask(np.array([[0, 1, 255]], np.uint8), p).tolist() == [[1, 0, 255]]
+    assert detect_product("ECOv002_L2_LSTE_33138_005_20240505T081052_0712_01_cloud_mask.tif").key == "ecostress_cloud"
+    assert p.gee["collections"] == ["NASA/ECOSTRESS/L2T_LSTE/V2"]

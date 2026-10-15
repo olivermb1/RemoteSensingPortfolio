@@ -105,7 +105,10 @@
         {"name": "interpolated", "field": "interpolated", "in": [1], "label": "Aerosol interpolated"},
         {"name": "water", "field": "water", "in": [1], "label": "Water"}
       ],
-      "presets": {"clear": ["aerosol_high"], "strict": ["aerosol_high", "aerosol_medium"]},
+      "presets": {
+        "clear": ["aerosol_high"],
+        "strict": ["aerosol_high", "aerosol_medium"]
+      },
       "default_preset": "clear"
     },
     "modis_mod09_state_1km": {
@@ -205,7 +208,10 @@
         {"name": "snow", "field": "reliability", "in": [2], "label": "Snow/ice"},
         {"name": "cloudy", "field": "reliability", "in": [3], "label": "Cloudy"}
       ],
-      "presets": {"good_only": ["marginal", "snow", "cloudy"], "clear": ["snow", "cloudy"]},
+      "presets": {
+        "good_only": ["marginal", "snow", "cloudy"],
+        "clear": ["snow", "cloudy"]
+      },
       "default_preset": "good_only"
     },
     "modis_mod11_qc": {
@@ -237,55 +243,56 @@
       "default_preset": "error_2k"
     },
     "ecostress_lste_qc": {
-      "title": "ECOSTRESS L2 LSTE QC (ECO2LSTE / ECO_L2T_LSTE, collection 2)",
+      "title": "ECOSTRESS L2 LSTE QC (ECO_L2_LSTE / ECO_L2T_LSTE / ECO_L2G_LSTE, collection 2)",
       "layer": "QC",
       "dtype": "uint16",
-      "fill": [],
+      "fill": [0],
       "filename_hints": ["ECO2LSTE", "LSTE_QC", "_QC.tif"],
-      "source": "ECOSTRESS L2 PSD / user guide, LSTE QC bit table. Inferred from v001 and v002 guides; verify bits 4-5 against the current guide before relying on them",
+      "source": "ECOSTRESS L2 User Guide V2 (ECOL2_User_Guide_V2.pdf, revision 4.2, Aug 2024), QC table. In collection 2 the QC layer carries NO cloud information (LP DAAC alert, 3 Sep 2024): bits 0-1 value 2 and bits 4-5 are 'not set'. Mask clouds with the separate cloud layer (product ecostress_cloud). Earth Engine's catalog page for NASA/ECOSTRESS/L2T_LSTE/V2 shows a different, 8-bit QC table that matches neither NASA guide; this entry follows NASA's guide",
       "gee": {"collections": [], "band": "QC"},
       "fields": [
-        {"name": "mandatory", "bits": [0, 2], "values": {"0": "best quality", "1": "nominal quality", "2": "cloud detected", "3": "pixel not produced"}},
+        {"name": "mandatory", "bits": [0, 2], "values": {"0": "produced by TES (may still be cloudy)", "1": "produced, degraded quality (low emissivity, low transmissivity or neural-net filled stripe)", "2": "not set", "3": "not produced (missing or bad data, or TES diverged)"}},
         {"name": "data_quality", "bits": [2, 2], "values": {"0": "good L1B data", "1": "missing stripe pixel in bands 1 and 5", "2": "not set", "3": "missing or bad L1B data"}},
-        {"name": "cloud_ocean", "bits": [4, 2], "values": {"0": "not set", "1": "not set", "2": "not set", "3": "not set"}},
+        {"name": "cloud_ocean", "bits": [4, 2], "values": {"0": "not set; use the cloud layer", "1": "not set; use the cloud layer", "2": "not set; use the cloud layer", "3": "not set; use the cloud layer"}},
         {"name": "iterations", "bits": [6, 2], "values": {"0": "slow convergence", "1": "nominal", "2": "nominal", "3": "fast"}},
-        {"name": "opacity", "bits": [8, 2], "values": {"0": ">= 0.3 (warm, humid air or cloud)", "1": "0.2 to 0.3", "2": "0.1 to 0.2", "3": "< 0.1 (dry or high altitude)"}},
+        {"name": "opacity", "bits": [8, 2], "values": {"0": ">= 0.3 (warm, humid air or cold land; the guide prints '>=3')", "1": "0.2 to 0.3", "2": "0.1 to 0.2", "3": "< 0.1 (dry or high altitude)"}},
         {"name": "mmd", "bits": [10, 2], "values": {"0": "> 0.15 (silicate rocks)", "1": "0.1 to 0.15", "2": "0.03 to 0.1 (soils)", "3": "< 0.03 (vegetation, snow, water, ice)"}},
         {"name": "emis_accuracy", "bits": [12, 2], "values": {"0": "> 0.02 (poor)", "1": "0.015 to 0.02 (marginal)", "2": "0.01 to 0.015 (good)", "3": "< 0.01 (excellent)"}},
         {"name": "lst_accuracy", "bits": [14, 2], "values": {"0": "> 2 K (poor)", "1": "1.5 to 2 K (marginal)", "2": "1 to 1.5 K (good)", "3": "< 1 K (excellent)"}}
       ],
       "flags": [
-        {"name": "nominal", "field": "mandatory", "in": [1], "label": "Nominal (not best) quality"},
-        {"name": "cloud", "field": "mandatory", "in": [2], "label": "Cloud detected"},
+        {"name": "degraded", "field": "mandatory", "in": [1], "label": "Produced with degraded quality"},
         {"name": "not_produced", "field": "mandatory", "in": [3], "label": "Pixel not produced"},
         {"name": "bad_l1b", "field": "data_quality", "in": [1, 3], "label": "Missing stripe or bad L1B data"},
         {"name": "high_opacity", "field": "opacity", "in": [0], "label": "Atmospheric opacity >= 0.3"},
         {"name": "lst_poor", "field": "lst_accuracy", "in": [0], "label": "LST accuracy poor (> 2 K)"},
         {"name": "lst_marginal", "field": "lst_accuracy", "in": [1], "label": "LST accuracy marginal (1.5 to 2 K)"},
-        {"name": "emis_poor", "field": "emis_accuracy", "in": [0], "label": "Emissivity accuracy poor"}
+        {"name": "emis_poor", "field": "emis_accuracy", "in": [0], "label": "Emissivity accuracy poor (> 0.02)"}
       ],
       "presets": {
-        "clear": ["cloud", "not_produced", "bad_l1b"],
-        "accurate": ["cloud", "not_produced", "bad_l1b", "lst_poor"],
-        "strict": ["cloud", "not_produced", "bad_l1b", "lst_poor", "lst_marginal", "high_opacity"]
+        "produced": ["not_produced", "bad_l1b"],
+        "accurate": ["not_produced", "bad_l1b", "lst_poor"],
+        "strict": ["degraded", "not_produced", "bad_l1b", "lst_poor", "lst_marginal", "high_opacity"]
       },
       "default_preset": "accurate"
     },
     "ecostress_cloud": {
-      "title": "ECOSTRESS cloud mask (ECO_L2T_LSTE 'cloud' layer or ECO2CLD v002 Cloud_final)",
+      "title": "ECOSTRESS collection 2 cloud mask (L2T LSTE 'cloud' layer, swath 'cloud_mask', or ECO_L2_CLOUD Cloud_final)",
       "layer": "cloud",
       "dtype": "uint8",
       "fill": [255],
-      "filename_hints": ["_cloud.tif", "Cloud_final", "ECO2CLD", "ECO_L2_CLOUD"],
-      "source": "ECOSTRESS collection 2 L2 CLOUD and L2T LSTE product specifications: 0 clear, 1 cloud",
-      "gee": {"collections": [], "band": "cloud"},
+      "filename_hints": ["_cloud.tif", "cloud_mask", "Cloud_final", "ECO_L2_CLOUD", "ECO2CLD"],
+      "source": "ECOSTRESS L2 User Guide V2 rev 4.2: cloud_mask uint8, 1 cloud, 0 clear, fill 255 (below 2 km elevation it includes probably and confidently cloudy pixels, above 2 km only confident). This is the layer to use for clouds in collection 2; the QC layer has none",
+      "gee": {"collections": ["NASA/ECOSTRESS/L2T_LSTE/V2"], "band": "cloud"},
       "fields": [
         {"name": "cloud", "bits": [0, 8], "values": {"0": "clear", "1": "cloud"}}
       ],
       "flags": [
         {"name": "cloud", "field": "cloud", "in": [1], "label": "Cloud"}
       ],
-      "presets": {"clear": ["cloud"]},
+      "presets": {
+        "clear": ["cloud"]
+      },
       "default_preset": "clear"
     },
     "opera_dswx_hls_wtr": {

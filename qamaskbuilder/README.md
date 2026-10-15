@@ -19,8 +19,8 @@ It also fixes the **HLS southern-hemisphere CRS bug**. HLS v2.0 files south of t
 | `modis_mod13_detailed_qa` | MOD13 DetailedQA (VI Quality) | Medium-high |
 | `modis_mod13_summary_qa` | MOD13 SummaryQA (pixel reliability) | High |
 | `modis_mod11_qc` | MOD11 QC_Day / QC_Night | Medium-high |
-| `ecostress_lste_qc` | ECOSTRESS L2 LSTE QC | **Medium.** Written from the v001/v002 guides; check bits 4-5 against the current guide |
-| `ecostress_cloud` | ECOSTRESS cloud layer (0 clear, 1 cloud) | Medium |
+| `ecostress_lste_qc` | ECOSTRESS collection 2 LSTE QC | Medium-high. Follows NASA's ECOL2 User Guide V2 (rev 4.2, Aug 2024). **This layer has no cloud information in collection 2**, so mask clouds with `ecostress_cloud` as well. Earth Engine's catalog page shows a different 8-bit QC table, which matches neither NASA guide |
+| `ecostress_cloud` | ECOSTRESS cloud layer (0 clear, 1 cloud, 255 fill) | Medium-high, from the same guide. This is the cloud mask to use in collection 2 |
 | `opera_dswx_hls_wtr` | OPERA DSWx-HLS WTR/BWTR classes | High. Values seen in a real tile match the spec |
 | `opera_dswx_hls_conf` | OPERA DSWx-HLS CONF | Medium-high. Classes 10-14 in a real tile add up exactly to the WTR cloud count; the 20s (snow) were not seen |
 | `opera_dist_alert_status` | OPERA DIST-ALERT VEG-DIST-STATUS | **Medium.** From the v1 spec, not checked against a real file |
@@ -34,6 +34,7 @@ pip install numpy rasterio            # or run inside QGIS's Python, which uses 
 python -m qamask build HLS.S30.T36MZE.2024015T074231.v2.0.Fmask.tif            # default preset, CRS fixed
 python -m qamask build *_QA_PIXEL.TIF --drop clear,water --buffer 2 --out-dir masks/
 python -m qamask build OPERA_*_B03_CONF.tif --drop observed --keep water_high,water_moderate
+python -m qamask build ECOv002_L2T_LSTE_*_QC.tif ECOv002_L2T_LSTE_*_cloud.tif --out-dir masks/   # ECOSTRESS needs both
 python -m qamask apply scene_SR_B5.TIF --mask masks/scene_QA_PIXEL_mask.tif --out b5_clean.tif
 python -m qamask decode HLS...Fmask.tif          # one named band per field, for inspection
 python -m qamask fix-crs HLS.*.tif --vrt         # just the CRS fix; a VRT copies no pixels
@@ -45,7 +46,7 @@ Each mask comes with a `.qml` (QGIS styles it red and green when you open it) an
 
 **QGIS:** run `python qgis_plugin/make_plugin.py`, then use *Plugins › Install from ZIP* with `qgis_plugin/qa_mask_builder.zip`. The Processing Toolbox gains *QA Mask Builder* with 12 *Build mask* tools, *Apply mask to image*, *Decode QA layer* and *Fix HLS southern-hemisphere CRS*. They work in batch mode and the Model Builder.
 
-**Earth Engine:** paste `gee/qamask_gee.js` into the Code Editor. It runs a demo: a clear HLS median around Lake Naivasha, Kenya, plus a Landsat 9 mask. As a module: `QAMask.apply(img, 'hls_fmask', {drop: ['clear'], buffer: 2})`. After editing the JSON, run `python -m qamask.gee_build` to regenerate the script.
+**Earth Engine:** paste `gee/qamask_gee.js` into the Code Editor. It runs a demo: a clear HLS median around Lake Naivasha, Kenya, plus a Landsat 9 mask. As a module: `QAMask.apply(img, 'hls_fmask', {drop: ['clear'], buffer: 2})`. After editing the JSON, run `python -m qamask.format_flags` (keeps one field or flag per line) and `python -m qamask.gee_build` to regenerate the script.
 
 ## Demo
 
@@ -58,7 +59,7 @@ Each mask comes with a `.qml` (QGIS styles it red and green when you open it) an
 ## What was tested, and what wasn't
 
 Tested here:
-- 18 pytest tests on both raster backends (rasterio, and GDAL-only as inside QGIS): `python -m pytest tests/`
+- 20 pytest tests on both raster backends (rasterio, and GDAL-only as inside QGIS): `python -m pytest tests/`
 - All 15 plugin tools run headless in **QGIS 3.34**, including the style loading: `python3 tests/qgis_smoke.py OUT_DIR`
 - The Earth Engine logic runs in Node on a stand-in for `ee.Image` and matches the Python masks pixel for pixel. That covers 10 cases on real HLS, Landsat and DSWx crops, and on random MODIS and ECOSTRESS values: `node gee/test_gee_mock.js`
 
