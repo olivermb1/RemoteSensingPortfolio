@@ -1,0 +1,204 @@
+{
+  "tool": "nisargunw 0.1.0",
+  "input": "/mnt/attach/project-files/tools/nisargunw/demo/data/NISAR_L2_PR_GUNW_001_172_A_045_004_2000_SH_20251104T154958_20251104T155033_20251116T154959_20251116T155034_X05010_N_F_J_001.h5",
+  "reader": "h5py",
+  "frequency": "A",
+  "polarization": "HH",
+  "identification": {
+    "granuleId": "NISAR_L2_PR_GUNW_001_172_A_045_004_2000_SH_20251104T154958_20251104T155033_20251116T154959_20251116T155034_X05010_N_F_J_001",
+    "missionId": "NISAR",
+    "productType": "GUNW",
+    "productVersion": "0.1.0",
+    "productSpecificationVersion": "1.2.1",
+    "compositeReleaseId": "X05010",
+    "trackNumber": 172,
+    "frameNumber": 45,
+    "orbitPassDirection": "Ascending",
+    "lookDirection": "Right",
+    "referenceZeroDopplerStartTime": "2025-11-04T15:49:58.000000000",
+    "referenceZeroDopplerEndTime": "2025-11-04T15:50:33.000000000",
+    "secondaryZeroDopplerStartTime": "2025-11-16T15:49:59.000000000",
+    "secondaryZeroDopplerEndTime": "2025-11-16T15:50:34.000000000",
+    "listOfFrequencies": [
+      "A"
+    ],
+    "isFullFrame": "False",
+    "processingDateTime": "2026-10-15T00:00:00",
+    "productDoi": "(synthetic)"
+  },
+  "outputs": {
+    "unwrapped_phase": {
+      "file": "GUNW_T172A_F045_20251104_20251116_unwrapped_phase.tif",
+      "units": "radians",
+      "stats": {
+        "valid_pixels": 88347,
+        "min": 10.618705749511719,
+        "p02": 15.96867862701416,
+        "median": 22.462743759155273,
+        "p98": 33.353611907958985,
+        "max": 36.041175842285156
+      }
+    },
+    "coherence": {
+      "file": "GUNW_T172A_F045_20251104_20251116_coherence.tif",
+      "units": "1",
+      "stats": {
+        "valid_pixels": 88347,
+        "min": 0.009999999776482582,
+        "p02": 0.10724292695522308,
+        "median": 0.7811239957809448,
+        "p98": 0.8839576053619385,
+        "max": 0.9800000190734863
+      }
+    },
+    "connected_components": {
+      "file": "GUNW_T172A_F045_20251104_20251116_connected_components.tif",
+      "units": "1",
+      "stats": null
+    },
+    "wrapped_phase": {
+      "file": "GUNW_T172A_F045_20251104_20251116_wrapped_phase.tif",
+      "units": "radians",
+      "stats": {
+        "valid_pixels": 1413552,
+        "min": -3.1415910720825195,
+        "p02": -3.026641802787781,
+        "median": 0.7354781925678253,
+        "p98": 3.028409423828125,
+        "max": 3.1415798664093018
+      }
+    },
+    "incidence_angle": {
+      "file": "GUNW_T172A_F045_20251104_20251116_incidence_angle.tif",
+      "units": "degrees",
+      "stats": {
+        "valid_pixels": 90000,
+        "min": 35.80141830444336,
+        "p02": 35.87705177307129,
+        "median": 36.53475570678711,
+        "p98": 37.28746086120606,
+        "max": 37.377742767333984
+      }
+    },
+    "los_east": {
+      "file": "GUNW_T172A_F045_20251104_20251116_los_east.tif",
+      "units": "1",
+      "stats": {
+        "valid_pixels": 90000,
+        "min": -0.5938004851341248,
+        "p02": -0.5925753152370453,
+        "median": -0.5823006927967072,
+        "p98": -0.5732402729988099,
+        "max": -0.5721937417984009
+      }
+    },
+    "los_north": {
+      "file": "GUNW_T172A_F045_20251104_20251116_los_north.tif",
+      "units": "1",
+      "stats": {
+        "valid_pixels": 90000,
+        "min": -0.12621618807315826,
+        "p02": -0.12595577627420426,
+        "median": -0.12377182394266129,
+        "p98": -0.1218459814786911,
+        "max": -0.12162353843450546
+      }
+    },
+    "los_up": {
+      "file": "GUNW_T172A_F045_20251104_20251116_los_up.tif",
+      "units": "1",
+      "stats": {
+        "valid_pixels": 90000,
+        "min": 0.7946511507034302,
+        "p02": 0.7956064319610596,
+        "median": 0.803496390581131,
+        "p98": 0.8102772283554077,
+        "max": 0.8110499382019043
+      }
+    },
+    "troposphere": {
+      "file": "GUNW_T172A_F045_20251104_20251116_troposphere.tif",
+      "units": "radians",
+      "stats": {
+        "valid_pixels": 90000,
+        "min": 2.9398250579833984,
+        "p02": 3.0994623947143554,
+        "median": 3.8915196657180786,
+        "p98": 5.043087072372437,
+        "max": 5.366427421569824
+      }
+    },
+    "los_displacement": {
+      "file": "GUNW_T172A_F045_20251104_20251116_los_displacement.tif",
+      "units": "meters",
+      "stats": {
+        "valid_pixels": 78856,
+        "min": -0.21790236234664917,
+        "p02": -0.16117194294929504,
+        "median": 0.0,
+        "p98": 0.1487716704607008,
+        "max": 0.18708515167236328
+      }
+    },
+    "vertical_displacement": {
+      "file": "GUNW_T172A_F045_20251104_20251116_vertical_displacement.tif",
+      "units": "meters",
+      "stats": {
+        "valid_pixels": 78856,
+        "min": -0.27124133706092834,
+        "p02": -0.20125735253095628,
+        "median": 3.2650859793648124e-10,
+        "p98": 0.18512251377105696,
+        "max": 0.23238712549209595
+      }
+    },
+    "keep_mask": {
+      "file": "GUNW_T172A_F045_20251104_20251116_keep_mask.tif",
+      "units": "1",
+      "stats": null
+    }
+  },
+  "warnings": [],
+  "epsg": 32637,
+  "window_80m": [
+    0,
+    300,
+    0,
+    300
+  ],
+  "heights": {
+    "source": "/mnt/attach/project-files/tools/nisargunw/demo/data/dem_fentale.tif",
+    "note": "DEM heights used as heights above the ellipsoid (geoid offset ignored)"
+  },
+  "water_pixels": 1298,
+  "components": {
+    "pixels_per_component": {
+      "1": 78856,
+      "2": 3366
+    },
+    "policy": "largest"
+  },
+  "corrections": {
+    "applied": [
+      "ionosphere",
+      "troposphere",
+      "solid_earth_tide"
+    ],
+    "skipped": [],
+    "note": "each correction phase is subtracted from unwrappedPhase"
+  },
+  "wavelength_m": 0.23840354512922465,
+  "sign": {
+    "value": -1.0,
+    "meaning": "LOS = sign * phase * wavelength / (4 pi); with -1, positive = towards the satellite"
+  },
+  "reference": {
+    "mode": "largest",
+    "component": 1,
+    "value_subtracted": -0.355917751789093
+  },
+  "kept_pixels": 78856,
+  "kept_fraction": 0.8761777777777778,
+  "quicklook": "GUNW_T172A_F045_20251104_20251116_quicklook.png",
+  "metadata_file": "GUNW_T172A_F045_20251104_20251116_metadata.json"
+}

@@ -1,0 +1,134 @@
+{
+  "tool": "nisargunw 0.1.0",
+  "input": "/mnt/attach/project-files/tools/nisargunw/demo/data/NISAR_L2_PR_GUNW_001_172_A_045_004_2000_SH_20251104T154958_20251104T155033_20251116T154959_20251116T155034_X05010_N_F_J_001.h5",
+  "reader": "h5py",
+  "frequency": "A",
+  "polarization": "HH",
+  "identification": {
+    "granuleId": "NISAR_L2_PR_GUNW_001_172_A_045_004_2000_SH_20251104T154958_20251104T155033_20251116T154959_20251116T155034_X05010_N_F_J_001",
+    "missionId": "NISAR",
+    "productType": "GUNW",
+    "productVersion": "0.1.0",
+    "productSpecificationVersion": "1.2.1",
+    "compositeReleaseId": "X05010",
+    "trackNumber": 172,
+    "frameNumber": 45,
+    "orbitPassDirection": "Ascending",
+    "lookDirection": "Right",
+    "referenceZeroDopplerStartTime": "2025-11-04T15:49:58.000000000",
+    "referenceZeroDopplerEndTime": "2025-11-04T15:50:33.000000000",
+    "secondaryZeroDopplerStartTime": "2025-11-16T15:49:59.000000000",
+    "secondaryZeroDopplerEndTime": "2025-11-16T15:50:34.000000000",
+    "listOfFrequencies": [
+      "A"
+    ],
+    "isFullFrame": "False",
+    "processingDateTime": "2026-10-15T00:00:00",
+    "productDoi": "(synthetic)"
+  },
+  "outputs": {
+    "unwrapped_phase": {
+      "file": "GUNW_T172A_F045_20251104_20251116_unwrapped_phase.tif",
+      "units": "radians",
+      "stats": {
+        "valid_pixels": 88347,
+        "min": 10.618705749511719,
+        "p02": 15.96867862701416,
+        "median": 22.462743759155273,
+        "p98": 33.353611907958985,
+        "max": 36.041175842285156
+      }
+    },
+    "coherence": {
+      "file": "GUNW_T172A_F045_20251104_20251116_coherence.tif",
+      "units": "1",
+      "stats": {
+        "valid_pixels": 88347,
+        "min": 0.009999999776482582,
+        "p02": 0.10724292695522308,
+        "median": 0.7811239957809448,
+        "p98": 0.8839576053619385,
+        "max": 0.9800000190734863
+      }
+    },
+    "connected_components": {
+      "file": "GUNW_T172A_F045_20251104_20251116_connected_components.tif",
+      "units": "1",
+      "stats": null
+    },
+    "incidence_angle": {
+      "file": "GUNW_T172A_F045_20251104_20251116_incidence_angle.tif",
+      "units": "degrees",
+      "stats": {
+        "valid_pixels": 90000,
+        "min": 35.80141830444336,
+        "p02": 35.87705177307129,
+        "median": 36.53475570678711,
+        "p98": 37.28746086120606,
+        "max": 37.377742767333984
+      }
+    },
+    "los_displacement": {
+      "file": "GUNW_T172A_F045_20251104_20251116_los_displacement.tif",
+      "units": "meters",
+      "stats": {
+        "valid_pixels": 82222,
+        "min": -0.21796077489852905,
+        "p02": -0.15970515608787536,
+        "median": -0.0005522221326828003,
+        "p98": 0.1479562643170357,
+        "max": 0.1870267391204834
+      }
+    }
+  },
+  "warnings": [
+    "2 connected components kept: each may be offset from the others by a whole number of 2*pi (about 12 cm LOS at L-band)"
+  ],
+  "epsg": 32637,
+  "window_80m": [
+    0,
+    300,
+    0,
+    300
+  ],
+  "heights": {
+    "source": "/mnt/attach/project-files/tools/nisargunw/demo/data/dem_fentale.tif",
+    "note": "DEM heights used as heights above the ellipsoid (geoid offset ignored)"
+  },
+  "water_pixels": 1298,
+  "components": {
+    "pixels_per_component": {
+      "1": 78856,
+      "2": 3366
+    },
+    "policy": "all"
+  },
+  "corrections": {
+    "applied": [
+      "ionosphere",
+      "troposphere",
+      "solid_earth_tide"
+    ],
+    "skipped": [],
+    "note": "each correction phase is subtracted from unwrappedPhase"
+  },
+  "wavelength_m": 0.23840354512922465,
+  "sign": {
+    "value": -1.0,
+    "meaning": "LOS = sign * phase * wavelength / (4 pi); with -1, positive = towards the satellite"
+  },
+  "reference": {
+    "mode": "point",
+    "component": 1,
+    "row": 149,
+    "col": 40,
+    "value_subtracted": -0.35585933923721313,
+    "lonlat": [
+      39.8,
+      8.95
+    ]
+  },
+  "kept_pixels": 82222,
+  "kept_fraction": 0.9135777777777778,
+  "metadata_file": "GUNW_T172A_F045_20251104_20251116_metadata.json"
+}

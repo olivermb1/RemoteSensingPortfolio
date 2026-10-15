@@ -1,0 +1,2 @@
+# Synthetic demo GUNW (16 MB) left out of git; demo/run_demo.sh rebuilds it with demo/make_demo_data.py
+demo/data/NISAR_L2_*.h5

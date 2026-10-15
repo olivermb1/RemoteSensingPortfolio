@@ -1,0 +1,150 @@
+{
+  "tool": "nisargunw 0.1.0",
+  "input": "/mnt/attach/project-files/tools/nisargunw/demo/data/NISAR_L2_PR_GUNW_001_172_A_045_004_2000_SH_20251104T154958_20251104T155033_20251116T154959_20251116T155034_X05010_N_F_J_001.h5",
+  "reader": "h5py",
+  "frequency": "A",
+  "polarization": "HH",
+  "identification": {
+    "granuleId": "NISAR_L2_PR_GUNW_001_172_A_045_004_2000_SH_20251104T154958_20251104T155033_20251116T154959_20251116T155034_X05010_N_F_J_001",
+    "missionId": "NISAR",
+    "productType": "GUNW",
+    "productVersion": "0.1.0",
+    "productSpecificationVersion": "1.2.1",
+    "compositeReleaseId": "X05010",
+    "trackNumber": 172,
+    "frameNumber": 45,
+    "orbitPassDirection": "Ascending",
+    "lookDirection": "Right",
+    "referenceZeroDopplerStartTime": "2025-11-04T15:49:58.000000000",
+    "referenceZeroDopplerEndTime": "2025-11-04T15:50:33.000000000",
+    "secondaryZeroDopplerStartTime": "2025-11-16T15:49:59.000000000",
+    "secondaryZeroDopplerEndTime": "2025-11-16T15:50:34.000000000",
+    "listOfFrequencies": [
+      "A"
+    ],
+    "isFullFrame": "False",
+    "processingDateTime": "2026-10-15T00:00:00",
+    "productDoi": "(synthetic)"
+  },
+  "outputs": {
+    "unwrapped_phase": {
+      "file": "GUNW_T172A_F045_20251104_20251116_unwrapped_phase.tif",
+      "units": "radians",
+      "stats": {
+        "valid_pixels": 17388,
+        "min": 10.618705749511719,
+        "p02": 15.013792819976807,
+        "median": 26.93965721130371,
+        "p98": 35.020327987670896,
+        "max": 35.834903717041016
+      }
+    },
+    "coherence": {
+      "file": "GUNW_T172A_F045_20251104_20251116_coherence.tif",
+      "units": "1",
+      "stats": {
+        "valid_pixels": 17388,
+        "min": 0.05000000074505806,
+        "p02": 0.40089208006858823,
+        "median": 0.7320391535758972,
+        "p98": 0.8638468134403229,
+        "max": 0.9415966868400574
+      }
+    },
+    "connected_components": {
+      "file": "GUNW_T172A_F045_20251104_20251116_connected_components.tif",
+      "units": "1",
+      "stats": null
+    },
+    "wrapped_phase": {
+      "file": "GUNW_T172A_F045_20251104_20251116_wrapped_phase.tif",
+      "units": "radians",
+      "stats": {
+        "valid_pixels": 276000,
+        "min": -3.1415910720825195,
+        "p02": -3.0410558128356935,
+        "median": 0.6635876297950745,
+        "p98": 3.042472076416016,
+        "max": 3.141575336456299
+      }
+    },
+    "wrapped_coherence": {
+      "file": "GUNW_T172A_F045_20251104_20251116_wrapped_coherence.tif",
+      "units": "1",
+      "stats": {
+        "valid_pixels": 276000,
+        "min": 0.009999999776482582,
+        "p02": 0.38586541533470153,
+        "median": 0.7254076302051544,
+        "p98": 0.9031200456619263,
+        "max": 0.9900000095367432
+      }
+    },
+    "incidence_angle": {
+      "file": "GUNW_T172A_F045_20251104_20251116_incidence_angle.tif",
+      "units": "degrees",
+      "stats": {
+        "valid_pixels": 17388,
+        "min": 36.28235626220703,
+        "p02": 36.38355827331543,
+        "median": 36.79924201965332,
+        "p98": 37.22785781860352,
+        "max": 37.27168655395508
+      }
+    },
+    "los_displacement": {
+      "file": "GUNW_T172A_F045_20251104_20251116_los_displacement.tif",
+      "units": "meters",
+      "stats": {
+        "valid_pixels": 17287,
+        "min": -0.20502203702926636,
+        "p02": -0.18214754104614259,
+        "median": 0.0,
+        "p98": 0.17450475394725798,
+        "max": 0.20001299679279327
+      }
+    }
+  },
+  "warnings": [],
+  "epsg": 32637,
+  "window_80m": [
+    51,
+    177,
+    150,
+    288
+  ],
+  "heights": {
+    "source": "/mnt/attach/project-files/tools/nisargunw/demo/data/dem_fentale.tif",
+    "note": "DEM heights used as heights above the ellipsoid (geoid offset ignored)"
+  },
+  "water_pixels": 0,
+  "components": {
+    "pixels_per_component": {
+      "1": 17287
+    },
+    "policy": "largest"
+  },
+  "corrections": {
+    "applied": [
+      "ionosphere",
+      "troposphere",
+      "solid_earth_tide"
+    ],
+    "skipped": [],
+    "note": "each correction phase is subtracted from unwrappedPhase"
+  },
+  "wavelength_m": 0.23840354512922465,
+  "sign": {
+    "value": -1.0,
+    "meaning": "LOS = sign * phase * wavelength / (4 pi); with -1, positive = towards the satellite"
+  },
+  "reference": {
+    "mode": "largest",
+    "component": 1,
+    "value_subtracted": -0.3688102960586548
+  },
+  "kept_pixels": 17287,
+  "kept_fraction": 0.9941913963653094,
+  "quicklook": "GUNW_T172A_F045_20251104_20251116_quicklook.png",
+  "metadata_file": "GUNW_T172A_F045_20251104_20251116_metadata.json"
+}

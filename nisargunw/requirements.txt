@@ -1,0 +1,6 @@
+numpy
+h5py
+rasterio
+pyproj
+matplotlib  # optional, for the quicklook PNG
+# demo/fetch_real_gunw.py also needs: earthaccess
