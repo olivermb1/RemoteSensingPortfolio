@@ -1,0 +1,7 @@
+numpy
+rasterio     # CLI; the QGIS script uses QGIS's own GDAL instead
+geopandas    # CLI: settlements, place names, FIRMS join
+shapely>=2
+pyarrow      # fetch-buildings / fetch-places (Overture GeoParquet on S3)
+scipy        # optional, faster labelling in the QGIS path
+matplotlib   # optional, map.png and chips.png
