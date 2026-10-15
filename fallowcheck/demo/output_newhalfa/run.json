@@ -1,0 +1,69 @@
+{
+ "tool": "fallowcheck",
+ "version": "0.1",
+ "run_at": "2026-10-15T18:52:13Z",
+ "baseline_years": [
+  2021,
+  2022,
+  2023
+ ],
+ "target_year": 2024,
+ "season": [
+  "07-15",
+  "11-30"
+ ],
+ "scenes_per_year": {
+  "2021": 35,
+  "2022": 44,
+  "2023": 44,
+  "2024": 40
+ },
+ "cropland": "worldcover_2021_newhalfa.tif",
+ "crop_classes": [
+  40
+ ],
+ "params": {
+  "min_base": 0.4,
+  "max_target": 0.3,
+  "min_drop": 0.15,
+  "min_obs": 3,
+  "pctl": 90
+ },
+ "units": "grid 1000 m",
+ "target": {
+  "not_farmed_ha": 486.3,
+  "farmed_base_seen_ha": 7194.8,
+  "not_farmed_pct": 6.8
+ },
+ "normal_years": {
+  "2021": {
+   "not_farmed_ha": 1795.3,
+   "farmed_base_seen_ha": 7640.4,
+   "not_farmed_pct": 23.5
+  },
+  "2022": {
+   "not_farmed_ha": 661.2,
+   "farmed_base_seen_ha": 6594.4,
+   "not_farmed_pct": 10.0
+  },
+  "2023": {
+   "not_farmed_ha": 1941.9,
+   "farmed_base_seen_ha": 7846.9,
+   "not_farmed_pct": 24.7
+  }
+ },
+ "field_contrast_aoi": {
+  "2021": 0.0368,
+  "2022": 0.0411,
+  "2023": 0.0401,
+  "2024": 0.0435
+ },
+ "low_peak_share_pct": {
+  "2021": 25.8,
+  "2022": 10.8,
+  "2023": 28.7,
+  "2024": 9.2
+ },
+ "pattern_lost_units": 0,
+ "units_reported": 148
+}

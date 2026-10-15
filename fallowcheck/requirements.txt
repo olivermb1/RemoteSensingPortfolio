@@ -1,0 +1,6 @@
+numpy
+rasterio     # CLI; the QGIS script uses QGIS's own GDAL instead
+geopandas    # CLI: units, place names
+shapely>=2
+pyarrow      # fetch-places (Overture GeoParquet on S3)
+matplotlib   # optional, map.png
