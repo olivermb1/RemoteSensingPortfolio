@@ -1,0 +1,46 @@
+class_code,class_name,spi_scale,lag_months,r,slope,n_months
+10,Tree cover,1,0,0.0691,0.1549,113
+10,Tree cover,1,1,0.4831,1.0785,113
+10,Tree cover,1,2,0.3064,0.6919,112
+10,Tree cover,3,0,0.4537,0.9701,109
+10,Tree cover,3,1,0.5715,1.2442,109
+10,Tree cover,3,2,0.4092,0.8854,108
+10,Tree cover,6,0,0.4696,1.0127,103
+10,Tree cover,6,1,0.4967,1.0938,103
+10,Tree cover,6,2,0.4038,0.9084,102
+20,Shrubland,1,0,0.1749,0.3724,113
+20,Shrubland,1,1,0.5326,1.134,113
+20,Shrubland,1,2,0.3763,0.8042,112
+20,Shrubland,3,0,0.5539,1.1426,109
+20,Shrubland,3,1,0.6434,1.3485,109
+20,Shrubland,3,2,0.4492,0.9327,108
+20,Shrubland,6,0,0.5438,1.152,103
+20,Shrubland,6,1,0.5319,1.1455,103
+20,Shrubland,6,2,0.4197,0.9132,102
+30,Grassland,1,0,0.3825,0.6622,113
+30,Grassland,1,1,0.6594,1.1415,113
+30,Grassland,1,2,0.4655,0.8092,112
+30,Grassland,3,0,0.7407,1.2147,109
+30,Grassland,3,1,0.7376,1.2173,109
+30,Grassland,3,2,0.4745,0.7716,108
+30,Grassland,6,0,0.6596,1.077,103
+30,Grassland,6,1,0.5596,0.9178,103
+30,Grassland,6,2,0.4054,0.6671,102
+40,Cropland,1,0,0.3564,0.6509,113
+40,Cropland,1,1,0.6344,1.1475,113
+40,Cropland,1,2,0.4397,0.8012,112
+40,Cropland,3,0,0.6981,1.1907,109
+40,Cropland,3,1,0.6885,1.1699,109
+40,Cropland,3,2,0.4304,0.7229,108
+40,Cropland,6,0,0.5924,0.9825,103
+40,Cropland,6,1,0.4944,0.8162,103
+40,Cropland,6,2,0.3326,0.5533,102
+90,Herbaceous wetland,1,0,0.1649,0.3902,113
+90,Herbaceous wetland,1,1,0.4094,0.9619,113
+90,Herbaceous wetland,1,2,0.3696,0.8664,112
+90,Herbaceous wetland,3,0,0.4759,1.0618,109
+90,Herbaceous wetland,3,1,0.5723,1.2751,109
+90,Herbaceous wetland,3,2,0.4721,1.0368,108
+90,Herbaceous wetland,6,0,0.5618,1.2608,103
+90,Herbaceous wetland,6,1,0.5583,1.2681,103
+90,Herbaceous wetland,6,2,0.4881,1.1161,102

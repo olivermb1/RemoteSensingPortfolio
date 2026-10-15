@@ -1,0 +1,6 @@
+class_code,class_name,pixels,ndvi_anom_target,spi_target,median_pixel_r,pct_rain_sensitive,best_scale,best_lag,best_r,mean_unexplained_recent,pct_landchange_flag,pct_drought-linked_browning,pct_browning_without_drought,pct_holding_up_in_drought,pct_browning_mild_dryness
+10,Tree cover,36564,-0.5176,-1.7225,0.2626,43.4881,3,1,0.5715,-0.2346,2.2536,25.4376,0.0,55.6508,0.0
+20,Shrubland,27411,-0.6852,-1.7892,0.2795,46.9082,3,1,0.6434,-0.2202,1.4702,31.1069,0.0,47.1454,0.0
+30,Grassland,46476,-0.9612,-1.8022,0.5046,84.7792,3,0,0.7407,-0.1445,1.2996,49.1815,0.0,27.0991,0.0541
+40,Cropland,43995,-1.2064,-1.7246,0.4578,82.7458,3,0,0.6981,-0.3703,1.432,62.2826,0.0,18.0119,0.0592
+90,Herbaceous wetland,158,-0.2381,-1.9966,0.3455,58.8608,3,1,0.5723,0.1127,0.6329,21.0526,0.0,59.3985,0.0

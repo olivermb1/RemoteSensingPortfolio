@@ -1,0 +1,3 @@
+# Large demo rasters left out of git; demo/run_demo.sh downloads them again
+demo/data/ndvi_anomaly_240m.tif
+demo/data/ndvi_anomaly_240m_clear.tif
