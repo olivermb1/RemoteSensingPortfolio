@@ -1,0 +1,4 @@
+numpy
+rasterio      # command line; the QGIS plugin uses QGIS's own GDAL instead
+matplotlib    # optional, for chart images
+earthaccess   # optional, only for fetch-hls (NASA Earthdata login)

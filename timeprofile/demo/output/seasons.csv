@@ -1,0 +1,17 @@
+feature,index,season,n_clear,first,last,mean,peak,peak_date,low,low_date,from
+"Paddies, north block",MNDWI,2023,24,2023-01-03,2023-12-24,-0.33477,-0.22526,2023-08-26,-0.42615,2023-01-30,smooth curve
+"Paddies, north block",MNDWI,2024,34,2024-01-03,2024-12-28,-0.30166,0.01424,2024-09-09,-0.45233,2024-06-16,smooth curve
+"Paddies, north block",NDVI,2023,25,2023-01-03,2023-12-24,0.43138,0.79234,2023-06-07,0.14629,2023-08-26,smooth curve
+"Paddies, north block",NDVI,2024,36,2024-01-03,2024-12-28,0.47242,0.85313,2024-04-21,0.11958,2024-02-04,smooth curve
+"Paddies, west block",MNDWI,2023,27,2023-01-08,2023-11-29,-0.3485,0.09817,2023-06-07,-0.51875,2023-05-07,smooth curve
+"Paddies, west block",MNDWI,2024,37,2024-01-03,2024-12-13,-0.37222,-0.22865,2024-06-26,-0.4496,2024-05-24,smooth curve
+"Paddies, west block",NDVI,2023,31,2023-01-08,2023-12-29,0.5349,0.82658,2023-09-27,0.16714,2023-03-19,smooth curve
+"Paddies, west block",NDVI,2024,37,2024-01-03,2024-12-13,0.55587,0.81538,2024-10-14,0.23956,2024-06-26,smooth curve
+"Single pixel, west block",MNDWI,2023,26,2023-01-08,2023-12-29,-0.34763,0.01484,2023-06-07,-0.49017,2023-01-08,smooth curve
+"Single pixel, west block",MNDWI,2024,35,2024-01-03,2024-12-13,-0.39505,-0.30226,2024-06-26,-0.5047,2024-05-09,smooth curve
+"Single pixel, west block",NDVI,2023,23,2023-01-08,2023-12-29,0.51152,0.77082,2023-10-04,0.19429,2023-06-07,smooth curve
+"Single pixel, west block",NDVI,2024,37,2024-01-03,2024-12-13,0.60226,0.80445,2024-05-05,0.27831,2024-12-13,smooth curve
+Village and plots,MNDWI,2023,27,2023-01-08,2023-12-29,-0.39769,-0.33978,2023-11-06,-0.43999,2023-08-26,smooth curve
+Village and plots,MNDWI,2024,36,2024-01-18,2024-12-13,-0.42358,-0.39516,2024-04-11,-0.4457,2024-09-11,smooth curve
+Village and plots,NDVI,2023,27,2023-01-08,2023-12-29,0.37436,0.53953,2023-05-12,0.25399,2023-02-24,smooth curve
+Village and plots,NDVI,2024,37,2024-01-18,2024-12-13,0.41576,0.52004,2024-12-13,0.34657,2024-09-25,smooth curve
