@@ -1,0 +1,528 @@
+{
+ "tool": "ecogeocheck",
+ "inputs": [
+  "demo/data/scenes"
+ ],
+ "summary_table": "demo/data/geolocation_summary_example.txt",
+ "summary_detected": "2 scenes; columns orbit=Orbit, scene=Scene, time=StartTime, qa=GeolocationAccuracyQA; delimiter spaces",
+ "reference": null,
+ "options": {
+  "accept": [
+   "best",
+   "good"
+  ],
+  "tolerance_m": 140,
+  "max_shift_m": 7700,
+  "fix": true,
+  "rescue": false,
+  "measure": true,
+  "use_water": true,
+  "use_stack": true
+ },
+ "io": "rasterio",
+ "counts": {
+  "keep": 4,
+  "fixed": 3,
+  "caution": 4,
+  "check": 0,
+  "drop": 1
+ },
+ "warnings": [],
+ "scenes": [
+  {
+   "orbit": 36879,
+   "scene": 3,
+   "tile": "37MAV",
+   "time": "2025-01-06T07:52:11",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_36879_003_37MAV_20250106T075211_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_36879_003_37MAV_20250106T075211_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_36879_003_37MAV_20250106T075211_0712_01_water.tif"
+   ],
+   "geo_qa": "best",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Image matching was performed for this scene",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": -17.924770666685045,
+   "dy_m": 12.237374936506697,
+   "offset_m": 21.703703573120762,
+   "match_peak": 0.333,
+   "match_distinct": 2.28,
+   "geo_qa_effective": "best",
+   "decision": "keep",
+   "reasons": [
+    "NASA flag 'best' (< 50 m)",
+    "measured offset 22 m (-18 m E, -12 m N) against own water layer (6.6% water), within tolerance"
+   ]
+  },
+  {
+   "orbit": 37085,
+   "scene": 8,
+   "tile": "37MAV",
+   "time": "2025-01-19T13:10:40",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_37085_008_37MAV_20250119T131040_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37085_008_37MAV_20250119T131040_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37085_008_37MAV_20250119T131040_0712_01_water.tif"
+   ],
+   "geo_qa": "best",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Image matching was performed for this scene",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": -14.035886771003732,
+   "dy_m": 10.70803564671634,
+   "offset_m": 17.654125434577193,
+   "match_peak": 0.339,
+   "match_distinct": 2.23,
+   "geo_qa_effective": "best",
+   "decision": "keep",
+   "reasons": [
+    "NASA flag 'best' (< 50 m)",
+    "measured offset 18 m (-14 m E, -11 m N) against own water layer (6.6% water), within tolerance"
+   ]
+  },
+  {
+   "orbit": 37315,
+   "scene": 13,
+   "tile": "37MAV",
+   "time": "2025-02-03T09:40:02",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_37315_013_37MAV_20250203T094002_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37315_013_37MAV_20250203T094002_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37315_013_37MAV_20250203T094002_0712_01_water.tif"
+   ],
+   "geo_qa": "good",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Matched a nearby scene in the orbit; correction carried over",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": 62.52751078348034,
+   "dy_m": -50.65071072616527,
+   "offset_m": 80.46852864222089,
+   "match_peak": 0.338,
+   "match_distinct": 2.04,
+   "geo_qa_effective": "good",
+   "decision": "keep",
+   "reasons": [
+    "NASA flag 'good' (about 50 m (corrected from a nearby matched scene))",
+    "measured offset 80 m (+63 m E, +51 m N) against own water layer (6.6% water), within tolerance"
+   ]
+  },
+  {
+   "orbit": 37534,
+   "scene": 18,
+   "tile": "37MAV",
+   "time": "2025-02-17T11:05:57",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_water.tif"
+   ],
+   "geo_qa": "suspect",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Matched elsewhere in the orbit, far from this scene",
+   "orbit_corrected": false,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": 2297.592041115412,
+   "dy_m": 1419.3674467453927,
+   "offset_m": 2700.6542052394307,
+   "match_peak": 0.344,
+   "match_distinct": 2.04,
+   "geo_qa_effective": "suspect",
+   "decision": "fixed",
+   "reasons": [
+    "NASA flag 'suspect' (about 2 to 4 km)",
+    "measured offset 2701 m (+2298 m E, -1419 m N) against own water layer (6.6% water); shifted copy written"
+   ],
+   "shifted_files": [
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_LST.tif",
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_cloud.tif",
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_water.tif"
+   ]
+  },
+  {
+   "orbit": 37770,
+   "scene": 6,
+   "tile": "37MAV",
+   "time": "2025-03-04T15:30:19",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_water.tif"
+   ],
+   "geo_qa": "poor",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "No image matching in this orbit",
+   "orbit_corrected": false,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": -4211.575593814619,
+   "dy_m": -3069.0741534797794,
+   "offset_m": 5211.19805246093,
+   "match_peak": 0.361,
+   "match_distinct": 2.16,
+   "geo_qa_effective": "poor",
+   "decision": "fixed",
+   "reasons": [
+    "NASA flag 'poor' (up to 7 km)",
+    "measured offset 5211 m (-4212 m E, +3069 m N) against own water layer (6.6% water); shifted copy written"
+   ],
+   "shifted_files": [
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_LST.tif",
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_cloud.tif",
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_water.tif"
+   ]
+  },
+  {
+   "orbit": 38029,
+   "scene": 11,
+   "tile": "37MAV",
+   "time": "2025-03-21T08:20:44",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01_water.tif"
+   ],
+   "geo_qa": "good",
+   "geo_qa_source": "sidecar ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01.json",
+   "geo_qa_note": "",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": 47.079243438159914,
+   "dy_m": 18.1299790065379,
+   "offset_m": 50.44949257908377,
+   "match_peak": 0.324,
+   "match_distinct": 2.14,
+   "geo_qa_effective": "good",
+   "decision": "keep",
+   "reasons": [
+    "NASA flag 'good' (about 50 m (corrected from a nearby matched scene))",
+    "measured offset 50 m (+47 m E, -18 m N) against own water layer (6.6% water), within tolerance"
+   ]
+  },
+  {
+   "orbit": 38318,
+   "scene": 16,
+   "tile": "37MAV",
+   "time": "2025-04-08T21:40:08",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_38318_016_37MAV_20250408T214008_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_38318_016_37MAV_20250408T214008_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_38318_016_37MAV_20250408T214008_0712_01_water.tif"
+   ],
+   "geo_qa": "suspect",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Matched elsewhere in the orbit, far from this scene",
+   "orbit_corrected": false,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": 70.8276902032207,
+   "dy_m": 4.649779712482195,
+   "offset_m": 70.98015321833292,
+   "match_peak": 0.654,
+   "match_distinct": 2.24,
+   "geo_qa_effective": "suspect",
+   "decision": "drop",
+   "reasons": [
+    "NASA flag 'suspect' (about 2 to 4 km)",
+    "measured offset 71 m (+71 m E, -5 m N) against own water layer (6.6% water), within tolerance"
+   ]
+  },
+  {
+   "orbit": 39072,
+   "scene": 4,
+   "tile": "37MAV",
+   "time": "2025-05-27T10:15:31",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_39072_004_37MAV_20250527T101531_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39072_004_37MAV_20250527T101531_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39072_004_37MAV_20250527T101531_0712_01_water.tif"
+   ],
+   "geo_qa": "best",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Image matching was performed for this scene",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [
+    [
+     "caution",
+     "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+    ]
+   ],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": -13.94657387789909,
+   "dy_m": 14.0240310643622,
+   "offset_m": 19.778280264620918,
+   "match_peak": 0.303,
+   "match_distinct": 2.02,
+   "geo_qa_effective": "best",
+   "decision": "caution",
+   "reasons": [
+    "NASA flag 'best' (< 50 m)",
+    "measured offset 20 m (-14 m E, -14 m N) against own water layer (6.6% water), within tolerance",
+    "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+   ]
+  },
+  {
+   "orbit": 39322,
+   "scene": 9,
+   "tile": "37MAV",
+   "time": "2025-06-12T12:44:13",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_39322_009_37MAV_20250612T124413_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39322_009_37MAV_20250612T124413_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39322_009_37MAV_20250612T124413_0712_01_water.tif"
+   ],
+   "geo_qa": "good",
+   "geo_qa_source": "summary table geolocation_summary_example.txt",
+   "geo_qa_note": "",
+   "orbit_corrected": null,
+   "fov_obstruction": null,
+   "conflict": "",
+   "issues": [
+    [
+     "caution",
+     "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+    ]
+   ],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": -78.32292556349834,
+   "dy_m": 17.681215456960267,
+   "offset_m": 80.29387304683186,
+   "match_peak": 0.333,
+   "match_distinct": 2.11,
+   "geo_qa_effective": "good",
+   "decision": "caution",
+   "reasons": [
+    "NASA flag 'good' (about 50 m (corrected from a nearby matched scene))",
+    "measured offset 80 m (-78 m E, -18 m N) against own water layer (6.6% water), within tolerance",
+    "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+   ]
+  },
+  {
+   "orbit": 39522,
+   "scene": 14,
+   "tile": "37MAV",
+   "time": "2025-06-25T09:02:50",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_39522_014_37MAV_20250625T090250_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39522_014_37MAV_20250625T090250_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39522_014_37MAV_20250625T090250_0712_01_water.tif"
+   ],
+   "geo_qa": null,
+   "geo_qa_source": "",
+   "geo_qa_note": "",
+   "orbit_corrected": null,
+   "fov_obstruction": null,
+   "conflict": "",
+   "issues": [
+    [
+     "caution",
+     "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+    ]
+   ],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": -9.714131374202664,
+   "dy_m": 16.126858326896713,
+   "offset_m": 18.826574511871947,
+   "match_peak": 0.338,
+   "match_distinct": 2.12,
+   "geo_qa_effective": null,
+   "decision": "caution",
+   "reasons": [
+    "no geolocation flag found for this scene",
+    "measured offset 19 m (-10 m E, -16 m N) against own water layer (6.6% water), within tolerance",
+    "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+   ]
+  },
+  {
+   "orbit": 39758,
+   "scene": 19,
+   "tile": "37MAV",
+   "time": "2025-07-10T14:18:26",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_water.tif"
+   ],
+   "geo_qa": null,
+   "geo_qa_source": "",
+   "geo_qa_note": "",
+   "orbit_corrected": null,
+   "fov_obstruction": null,
+   "conflict": "",
+   "issues": [],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": 1100.5487266596747,
+   "dy_m": -610.6407214506936,
+   "offset_m": 1258.6062094420379,
+   "match_peak": 0.361,
+   "match_distinct": 2.15,
+   "geo_qa_effective": null,
+   "decision": "fixed",
+   "reasons": [
+    "no geolocation flag found for this scene",
+    "measured offset 1259 m (+1101 m E, +611 m N) against own water layer (6.6% water); shifted copy written"
+   ],
+   "shifted_files": [
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_LST.tif",
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_cloud.tif",
+    "demo/output/fix/shifted/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_water.tif"
+   ]
+  },
+  {
+   "orbit": 40112,
+   "scene": 7,
+   "tile": "37MAV",
+   "time": "2025-08-02T08:47:05",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_40112_007_37MAV_20250802T084705_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_40112_007_37MAV_20250802T084705_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_40112_007_37MAV_20250802T084705_0712_01_water.tif"
+   ],
+   "geo_qa": "best",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Image matching was performed for this scene",
+   "orbit_corrected": true,
+   "fov_obstruction": true,
+   "conflict": "",
+   "issues": [
+    [
+     "caution",
+     "ISS solar array obstructs part of the view (FieldOfViewObstruction)"
+    ]
+   ],
+   "m_ok": true,
+   "m_why": "",
+   "reference": "own water layer (6.6% water)",
+   "dx_m": -13.070080749975437,
+   "dy_m": 20.914712509274743,
+   "offset_m": 24.662769717866077,
+   "match_peak": 0.385,
+   "match_distinct": 2.55,
+   "geo_qa_effective": "best",
+   "decision": "caution",
+   "reasons": [
+    "NASA flag 'best' (< 50 m)",
+    "measured offset 25 m (-13 m E, -21 m N) against own water layer (6.6% water), within tolerance",
+    "ISS solar array obstructs part of the view (FieldOfViewObstruction)"
+   ]
+  }
+ ]
+}

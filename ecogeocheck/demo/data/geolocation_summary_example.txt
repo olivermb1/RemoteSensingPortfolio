@@ -1,0 +1,4 @@
+# Synthetic stand-in for NASA's ECOSTRESS geolocation summary file
+Orbit Scene StartTime GeolocationAccuracyQA
+35730 001 2024-10-24T10:00:00 Best
+39322 009 2025-06-12T12:44:13 Good

@@ -1,0 +1,6 @@
+numpy
+rasterio
+h5py          # optional: reads GeolocationAccuracyQA from ECO_L1B_GEO .h5 files
+requests      # optional: for `fetch`
+earthaccess   # optional: for `fetch` (reads L1B GEO metadata without downloading the whole file)
+matplotlib    # optional: quicklook.png

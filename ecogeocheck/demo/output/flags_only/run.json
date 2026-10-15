@@ -1,0 +1,405 @@
+{
+ "tool": "ecogeocheck",
+ "inputs": [
+  "demo/data/scenes"
+ ],
+ "summary_table": "demo/data/geolocation_summary_example.txt",
+ "summary_detected": "2 scenes; columns orbit=Orbit, scene=Scene, time=StartTime, qa=GeolocationAccuracyQA; delimiter spaces",
+ "reference": null,
+ "options": {
+  "accept": [
+   "best",
+   "good"
+  ],
+  "tolerance_m": 140,
+  "max_shift_m": 7700,
+  "fix": false,
+  "rescue": false,
+  "measure": false,
+  "use_water": true,
+  "use_stack": true
+ },
+ "io": "rasterio",
+ "counts": {
+  "keep": 4,
+  "fixed": 0,
+  "caution": 3,
+  "check": 2,
+  "drop": 3
+ },
+ "warnings": [],
+ "scenes": [
+  {
+   "orbit": 36879,
+   "scene": 3,
+   "tile": "37MAV",
+   "time": "2025-01-06T07:52:11",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_36879_003_37MAV_20250106T075211_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_36879_003_37MAV_20250106T075211_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_36879_003_37MAV_20250106T075211_0712_01_water.tif"
+   ],
+   "geo_qa": "best",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Image matching was performed for this scene",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "geo_qa_effective": "best",
+   "decision": "keep",
+   "reasons": [
+    "NASA flag 'best' (< 50 m)"
+   ]
+  },
+  {
+   "orbit": 37085,
+   "scene": 8,
+   "tile": "37MAV",
+   "time": "2025-01-19T13:10:40",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_37085_008_37MAV_20250119T131040_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37085_008_37MAV_20250119T131040_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37085_008_37MAV_20250119T131040_0712_01_water.tif"
+   ],
+   "geo_qa": "best",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Image matching was performed for this scene",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "geo_qa_effective": "best",
+   "decision": "keep",
+   "reasons": [
+    "NASA flag 'best' (< 50 m)"
+   ]
+  },
+  {
+   "orbit": 37315,
+   "scene": 13,
+   "tile": "37MAV",
+   "time": "2025-02-03T09:40:02",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_37315_013_37MAV_20250203T094002_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37315_013_37MAV_20250203T094002_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37315_013_37MAV_20250203T094002_0712_01_water.tif"
+   ],
+   "geo_qa": "good",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Matched a nearby scene in the orbit; correction carried over",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "geo_qa_effective": "good",
+   "decision": "keep",
+   "reasons": [
+    "NASA flag 'good' (about 50 m (corrected from a nearby matched scene))"
+   ]
+  },
+  {
+   "orbit": 37534,
+   "scene": 18,
+   "tile": "37MAV",
+   "time": "2025-02-17T11:05:57",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37534_018_37MAV_20250217T110557_0712_01_water.tif"
+   ],
+   "geo_qa": "suspect",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Matched elsewhere in the orbit, far from this scene",
+   "orbit_corrected": false,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "geo_qa_effective": "suspect",
+   "decision": "drop",
+   "reasons": [
+    "NASA flag 'suspect' (about 2 to 4 km)"
+   ]
+  },
+  {
+   "orbit": 37770,
+   "scene": 6,
+   "tile": "37MAV",
+   "time": "2025-03-04T15:30:19",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_37770_006_37MAV_20250304T153019_0712_01_water.tif"
+   ],
+   "geo_qa": "poor",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "No image matching in this orbit",
+   "orbit_corrected": false,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "geo_qa_effective": "poor",
+   "decision": "drop",
+   "reasons": [
+    "NASA flag 'poor' (up to 7 km)"
+   ]
+  },
+  {
+   "orbit": 38029,
+   "scene": 11,
+   "tile": "37MAV",
+   "time": "2025-03-21T08:20:44",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01_water.tif"
+   ],
+   "geo_qa": "good",
+   "geo_qa_source": "sidecar ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01.json",
+   "geo_qa_note": "",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "geo_qa_effective": "good",
+   "decision": "keep",
+   "reasons": [
+    "NASA flag 'good' (about 50 m (corrected from a nearby matched scene))"
+   ]
+  },
+  {
+   "orbit": 38318,
+   "scene": 16,
+   "tile": "37MAV",
+   "time": "2025-04-08T21:40:08",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_38318_016_37MAV_20250408T214008_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_38318_016_37MAV_20250408T214008_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_38318_016_37MAV_20250408T214008_0712_01_water.tif"
+   ],
+   "geo_qa": "suspect",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Matched elsewhere in the orbit, far from this scene",
+   "orbit_corrected": false,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [],
+   "geo_qa_effective": "suspect",
+   "decision": "drop",
+   "reasons": [
+    "NASA flag 'suspect' (about 2 to 4 km)"
+   ]
+  },
+  {
+   "orbit": 39072,
+   "scene": 4,
+   "tile": "37MAV",
+   "time": "2025-05-27T10:15:31",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_39072_004_37MAV_20250527T101531_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39072_004_37MAV_20250527T101531_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39072_004_37MAV_20250527T101531_0712_01_water.tif"
+   ],
+   "geo_qa": "best",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Image matching was performed for this scene",
+   "orbit_corrected": true,
+   "fov_obstruction": false,
+   "conflict": "",
+   "issues": [
+    [
+     "caution",
+     "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+    ]
+   ],
+   "geo_qa_effective": "best",
+   "decision": "caution",
+   "reasons": [
+    "NASA flag 'best' (< 50 m)",
+    "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+   ]
+  },
+  {
+   "orbit": 39322,
+   "scene": 9,
+   "tile": "37MAV",
+   "time": "2025-06-12T12:44:13",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_39322_009_37MAV_20250612T124413_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39322_009_37MAV_20250612T124413_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39322_009_37MAV_20250612T124413_0712_01_water.tif"
+   ],
+   "geo_qa": "good",
+   "geo_qa_source": "summary table geolocation_summary_example.txt",
+   "geo_qa_note": "",
+   "orbit_corrected": null,
+   "fov_obstruction": null,
+   "conflict": "",
+   "issues": [
+    [
+     "caution",
+     "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+    ]
+   ],
+   "geo_qa_effective": "good",
+   "decision": "caution",
+   "reasons": [
+    "NASA flag 'good' (about 50 m (corrected from a nearby matched scene))",
+    "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+   ]
+  },
+  {
+   "orbit": 39522,
+   "scene": 14,
+   "tile": "37MAV",
+   "time": "2025-06-25T09:02:50",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_39522_014_37MAV_20250625T090250_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39522_014_37MAV_20250625T090250_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39522_014_37MAV_20250625T090250_0712_01_water.tif"
+   ],
+   "geo_qa": null,
+   "geo_qa_source": "",
+   "geo_qa_note": "",
+   "orbit_corrected": null,
+   "fov_obstruction": null,
+   "conflict": "",
+   "issues": [
+    [
+     "caution",
+     "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+    ]
+   ],
+   "geo_qa_effective": null,
+   "decision": "check",
+   "reasons": [
+    "no geolocation flag found for this scene",
+    "data noisier than expected (15 May to 1 July 2025); NASA says use with caution"
+   ]
+  },
+  {
+   "orbit": 39758,
+   "scene": 19,
+   "tile": "37MAV",
+   "time": "2025-07-10T14:18:26",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_39758_019_37MAV_20250710T141826_0712_01_water.tif"
+   ],
+   "geo_qa": null,
+   "geo_qa_source": "",
+   "geo_qa_note": "",
+   "orbit_corrected": null,
+   "fov_obstruction": null,
+   "conflict": "",
+   "issues": [],
+   "geo_qa_effective": null,
+   "decision": "check",
+   "reasons": [
+    "no geolocation flag found for this scene"
+   ]
+  },
+  {
+   "orbit": 40112,
+   "scene": 7,
+   "tile": "37MAV",
+   "time": "2025-08-02T08:47:05",
+   "product": "L2T_LSTE",
+   "layers": [
+    "LST",
+    "cloud",
+    "water"
+   ],
+   "files": [
+    "demo/data/scenes/ECOv002_L2T_LSTE_40112_007_37MAV_20250802T084705_0712_01_LST.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_40112_007_37MAV_20250802T084705_0712_01_cloud.tif",
+    "demo/data/scenes/ECOv002_L2T_LSTE_40112_007_37MAV_20250802T084705_0712_01_water.tif"
+   ],
+   "geo_qa": "best",
+   "geo_qa_source": "L1B_GEO file",
+   "geo_qa_note": "Image matching was performed for this scene",
+   "orbit_corrected": true,
+   "fov_obstruction": true,
+   "conflict": "",
+   "issues": [
+    [
+     "caution",
+     "ISS solar array obstructs part of the view (FieldOfViewObstruction)"
+    ]
+   ],
+   "geo_qa_effective": "best",
+   "decision": "caution",
+   "reasons": [
+    "NASA flag 'best' (< 50 m)",
+    "ISS solar array obstructs part of the view (FieldOfViewObstruction)"
+   ]
+  }
+ ]
+}

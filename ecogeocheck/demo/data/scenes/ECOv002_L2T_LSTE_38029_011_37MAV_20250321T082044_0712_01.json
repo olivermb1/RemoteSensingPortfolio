@@ -1,0 +1,23 @@
+{
+ "GranuleUR": "ECOv002_L2T_LSTE_38029_011_37MAV_20250321T082044_0712_01",
+ "AdditionalAttributes": [
+  {
+   "Name": "GeolocationAccuracyQA",
+   "Values": [
+    "Good"
+   ]
+  },
+  {
+   "Name": "OrbitCorrectionPerformed",
+   "Values": [
+    "True"
+   ]
+  },
+  {
+   "Name": "FieldOfViewObstruction",
+   "Values": [
+    "False"
+   ]
+  }
+ ]
+}
