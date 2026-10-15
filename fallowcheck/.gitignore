@@ -1,0 +1,3 @@
+# Left out of git; demo/run_demo.sh downloads the scenes and rebuilds the peak rasters
+demo/data/s2_*/
+demo/output_*/peaks.tif

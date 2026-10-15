@@ -1,0 +1,69 @@
+{
+ "tool": "fallowcheck",
+ "version": "0.1",
+ "run_at": "2026-10-15T18:46:54Z",
+ "baseline_years": [
+  2021,
+  2022,
+  2023
+ ],
+ "target_year": 2024,
+ "season": [
+  "07-15",
+  "11-30"
+ ],
+ "scenes_per_year": {
+  "2021": 19,
+  "2022": 15,
+  "2023": 20,
+  "2024": 16
+ },
+ "cropland": "worldcover_2021_gezira.tif",
+ "crop_classes": [
+  40
+ ],
+ "params": {
+  "min_base": 0.4,
+  "max_target": 0.3,
+  "min_drop": 0.15,
+  "min_obs": 3,
+  "pctl": 90
+ },
+ "units": "grid 1000 m",
+ "target": {
+  "not_farmed_ha": 65.0,
+  "farmed_base_seen_ha": 12041.6,
+  "not_farmed_pct": 0.5
+ },
+ "normal_years": {
+  "2021": {
+   "not_farmed_ha": 1503.7,
+   "farmed_base_seen_ha": 13004.5,
+   "not_farmed_pct": 11.6
+  },
+  "2022": {
+   "not_farmed_ha": 2952.0,
+   "farmed_base_seen_ha": 12968.8,
+   "not_farmed_pct": 22.8
+  },
+  "2023": {
+   "not_farmed_ha": 1887.4,
+   "farmed_base_seen_ha": 12818.7,
+   "not_farmed_pct": 14.7
+  }
+ },
+ "field_contrast_aoi": {
+  "2021": 0.0452,
+  "2022": 0.0486,
+  "2023": 0.0554,
+  "2024": 0.0351
+ },
+ "low_peak_share_pct": {
+  "2021": 13.0,
+  "2022": 23.5,
+  "2023": 16.9,
+  "2024": 0.8
+ },
+ "pattern_lost_units": 106,
+ "units_reported": 206
+}
