@@ -1,0 +1,59 @@
+{
+ "tool": "burncheck",
+ "version": "0.1",
+ "run_at": "2026-10-15T17:01:09Z",
+ "before": [
+  "S2A_34PFV_20230330_1_L2A.tif",
+  "S2A_34PFV_20230409_0_L2A.tif",
+  "S2A_34PFV_20230419_0_L2A.tif",
+  "S2B_34PFV_20230404_0_L2A.tif",
+  "S2B_34PFV_20230414_0_L2A.tif"
+ ],
+ "after": [
+  "S2A_34PFV_20230529_0_L2A.tif",
+  "S2A_34PFV_20230618_0_L2A.tif",
+  "S2B_34PFV_20230613_0_L2A.tif"
+ ],
+ "before_dates": [
+  "2023-03-30",
+  "2023-04-09",
+  "2023-04-19",
+  "2023-04-04",
+  "2023-04-14"
+ ],
+ "after_dates": [
+  "2023-05-29",
+  "2023-06-18",
+  "2023-06-13"
+ ],
+ "buildings": "buildings.geojson",
+ "n_buildings": 179674,
+ "units": "auto",
+ "unit_rules": {
+  "link_m": 40.0,
+  "max_km2": 0.5,
+  "cell_m": 250.0,
+  "min_buildings": 5
+ },
+ "params": {
+  "t_dnbr": 0.1,
+  "t_dark": 0.05,
+  "max_mndwi": 0.0,
+  "bg_block": 100,
+  "min_clear_pct": 50.0,
+  "likely_pct": 20.0,
+  "likely_px": 8,
+  "possible_pct": 7.0,
+  "possible_px": 4,
+  "ring_pct": 20.0
+ },
+ "unit_counts": {
+  "no sign": 858,
+  "possible": 50,
+  "likely burned": 15,
+  "not enough clear data": 0
+ },
+ "burned_ha_total": 58.32,
+ "buildings_burned_pct_aoi": 2.813,
+ "firms": null
+}
