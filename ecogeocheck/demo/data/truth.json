@@ -1,0 +1,110 @@
+[
+ {
+  "time": "2025-01-06T07:52:11",
+  "flag": "best",
+  "applied_east_m": 0.0,
+  "applied_north_m": 0.0,
+  "cloud": 0.1,
+  "fov_obstruction": false,
+  "flag_stored_in": "geo"
+ },
+ {
+  "time": "2025-01-19T13:10:40",
+  "flag": "best",
+  "applied_east_m": 0.0,
+  "applied_north_m": 0.0,
+  "cloud": 0.05,
+  "fov_obstruction": false,
+  "flag_stored_in": "geo"
+ },
+ {
+  "time": "2025-02-03T09:40:02",
+  "flag": "good",
+  "applied_east_m": 70.0,
+  "applied_north_m": 70.0,
+  "cloud": 0.2,
+  "fov_obstruction": false,
+  "flag_stored_in": "geo"
+ },
+ {
+  "time": "2025-02-17T11:05:57",
+  "flag": "suspect",
+  "applied_east_m": 2310.0,
+  "applied_north_m": -1400.0,
+  "cloud": 0.15,
+  "fov_obstruction": false,
+  "flag_stored_in": "geo"
+ },
+ {
+  "time": "2025-03-04T15:30:19",
+  "flag": "poor",
+  "applied_east_m": -4200.0,
+  "applied_north_m": 3080.0,
+  "cloud": 0.1,
+  "fov_obstruction": false,
+  "flag_stored_in": "geo"
+ },
+ {
+  "time": "2025-03-21T08:20:44",
+  "flag": "good",
+  "applied_east_m": 70.0,
+  "applied_north_m": 0.0,
+  "cloud": 0.25,
+  "fov_obstruction": false,
+  "flag_stored_in": "sidecar"
+ },
+ {
+  "time": "2025-04-08T21:40:08",
+  "flag": "suspect",
+  "applied_east_m": 70.0,
+  "applied_north_m": 0.0,
+  "cloud": 0.15,
+  "fov_obstruction": false,
+  "flag_stored_in": "geo"
+ },
+ {
+  "time": "2025-05-27T10:15:31",
+  "flag": "best",
+  "applied_east_m": 0.0,
+  "applied_north_m": 0.0,
+  "cloud": 0.3,
+  "fov_obstruction": false,
+  "flag_stored_in": "geo"
+ },
+ {
+  "time": "2025-06-12T12:44:13",
+  "flag": "good",
+  "applied_east_m": -70.0,
+  "applied_north_m": 0.0,
+  "cloud": 0.1,
+  "fov_obstruction": true,
+  "flag_stored_in": "summary"
+ },
+ {
+  "time": "2025-06-25T09:02:50",
+  "flag": null,
+  "applied_east_m": 0.0,
+  "applied_north_m": 0.0,
+  "cloud": 0.1,
+  "fov_obstruction": false,
+  "flag_stored_in": "none"
+ },
+ {
+  "time": "2025-07-10T14:18:26",
+  "flag": null,
+  "applied_east_m": 1120.0,
+  "applied_north_m": 630.0,
+  "cloud": 0.2,
+  "fov_obstruction": false,
+  "flag_stored_in": "none"
+ },
+ {
+  "time": "2025-08-02T08:47:05",
+  "flag": "best",
+  "applied_east_m": 0.0,
+  "applied_north_m": 0.0,
+  "cloud": 0.85,
+  "fov_obstruction": true,
+  "flag_stored_in": "geo"
+ }
+]
