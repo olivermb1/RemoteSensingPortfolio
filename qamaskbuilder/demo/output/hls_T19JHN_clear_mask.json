@@ -1,0 +1,90 @@
+{
+ "input": "demo/data/HLS.L30.T19JHN.2024279T141847.v2.0.Fmask.tif",
+ "output": "demo/output/hls_T19JHN_clear_mask.tif",
+ "product": "hls_fmask",
+ "drop": [
+  "cloud",
+  "adjacent",
+  "shadow",
+  "snow",
+  "aerosol_high"
+ ],
+ "keep": [],
+ "buffer": 0,
+ "crs": {
+  "input_epsg": 32619,
+  "output_epsg": 32719,
+  "needed": true,
+  "new_epsg": 32719,
+  "y_shift": 10000000.0,
+  "reason": "EPSG:32619 with negative northings; relabel as EPSG:32719 and add 10,000,000 m to Y",
+  "applied": true
+ },
+ "mask": {
+  "usable": 11096807,
+  "masked": 2298656,
+  "nodata": 137,
+  "usable_share_of_valid": 0.8284
+ },
+ "flags": {
+  "valid_pixels": 13395463,
+  "fill_pixels": 137,
+  "flags": [
+   {
+    "flag": "cirrus",
+    "label": "Cirrus (reserved; HLS v2.0 does not set it)",
+    "pixels": 0,
+    "share_of_valid": 0.0
+   },
+   {
+    "flag": "cloud",
+    "label": "Cloud",
+    "pixels": 867588,
+    "share_of_valid": 0.0648
+   },
+   {
+    "flag": "adjacent",
+    "label": "Adjacent to cloud or shadow",
+    "pixels": 374049,
+    "share_of_valid": 0.0279
+   },
+   {
+    "flag": "shadow",
+    "label": "Cloud shadow",
+    "pixels": 386611,
+    "share_of_valid": 0.0289
+   },
+   {
+    "flag": "snow",
+    "label": "Snow or ice",
+    "pixels": 0,
+    "share_of_valid": 0.0
+   },
+   {
+    "flag": "water",
+    "label": "Water",
+    "pixels": 134989,
+    "share_of_valid": 0.0101
+   },
+   {
+    "flag": "aerosol_high",
+    "label": "High aerosol",
+    "pixels": 1173602,
+    "share_of_valid": 0.0876
+   },
+   {
+    "flag": "aerosol_moderate",
+    "label": "Moderate aerosol",
+    "pixels": 5257870,
+    "share_of_valid": 0.3925
+   },
+   {
+    "flag": "aerosol_climatology",
+    "label": "Aerosol from climatology (no retrieval)",
+    "pixels": 0,
+    "share_of_valid": 0.0
+   }
+  ]
+ },
+ "style": "demo/output/hls_T19JHN_clear_mask.qml"
+}

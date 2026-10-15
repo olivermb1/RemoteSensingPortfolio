@@ -1,0 +1,380 @@
+{
+  "_about": "One list of quality-flag definitions shared by the Python core, the QGIS plugin and the Earth Engine script. A field is (start bit, number of bits). A flag is true where the field's value is in 'in'. Fields with bits [0, N] where N is the layer's bit depth are plain class values, not packed bits. Check 'source' before relying on a product.",
+  "products": {
+    "hls_fmask": {
+      "title": "HLS v2.0 Fmask (HLSL30 and HLSS30)",
+      "layer": "Fmask",
+      "dtype": "uint8",
+      "fill": [255],
+      "filename_hints": ["HLS.L30.", "HLS.S30.", ".Fmask."],
+      "source": "HLS v2.0 User Guide, Table 9; also the 'Fmask bit description' tag inside each Fmask file",
+      "gee": {"collections": ["NASA/HLS/HLSL30/v002", "NASA/HLS/HLSS30/v002"], "band": "Fmask"},
+      "fields": [
+        {"name": "cirrus", "bits": [0, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "cloud", "bits": [1, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "adjacent", "bits": [2, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "shadow", "bits": [3, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "snow", "bits": [4, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "water", "bits": [5, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "aerosol", "bits": [6, 2], "values": {"0": "climatology", "1": "low", "2": "moderate", "3": "high"}}
+      ],
+      "flags": [
+        {"name": "cirrus", "field": "cirrus", "in": [1], "label": "Cirrus (reserved; HLS v2.0 does not set it)"},
+        {"name": "cloud", "field": "cloud", "in": [1], "label": "Cloud"},
+        {"name": "adjacent", "field": "adjacent", "in": [1], "label": "Adjacent to cloud or shadow"},
+        {"name": "shadow", "field": "shadow", "in": [1], "label": "Cloud shadow"},
+        {"name": "snow", "field": "snow", "in": [1], "label": "Snow or ice"},
+        {"name": "water", "field": "water", "in": [1], "label": "Water"},
+        {"name": "aerosol_high", "field": "aerosol", "in": [3], "label": "High aerosol"},
+        {"name": "aerosol_moderate", "field": "aerosol", "in": [2], "label": "Moderate aerosol"},
+        {"name": "aerosol_climatology", "field": "aerosol", "in": [0], "label": "Aerosol from climatology (no retrieval)"}
+      ],
+      "presets": {
+        "clear": ["cloud", "adjacent", "shadow", "snow", "aerosol_high"],
+        "clear_land": ["cloud", "adjacent", "shadow", "snow", "aerosol_high", "water"],
+        "strict": ["cloud", "adjacent", "shadow", "snow", "aerosol_high", "aerosol_moderate"],
+        "cloud_only": ["cloud", "shadow"]
+      },
+      "default_preset": "clear"
+    },
+    "landsat_c2_qa_pixel": {
+      "title": "Landsat 8/9 Collection 2 QA_PIXEL (Level 1 and Level 2)",
+      "layer": "QA_PIXEL",
+      "dtype": "uint16",
+      "fill": [1],
+      "fill_rule": {"field": "fill", "in": [1]},
+      "filename_hints": ["_QA_PIXEL"],
+      "source": "USGS Landsat 8-9 Collection 2 Level 2 Science Product Guide (LSDS-1619), QA_PIXEL table. Bit 2 (cirrus) and bits 14-15 are Landsat 8/9 only; Landsat 4-7 leave them 0",
+      "gee": {"collections": ["LANDSAT/LC08/C02/T1_L2", "LANDSAT/LC09/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LT05/C02/T1_L2"], "band": "QA_PIXEL"},
+      "fields": [
+        {"name": "fill", "bits": [0, 1], "values": {"0": "image", "1": "fill"}},
+        {"name": "dilated_cloud", "bits": [1, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "cirrus", "bits": [2, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "cloud", "bits": [3, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "shadow", "bits": [4, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "snow", "bits": [5, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "clear", "bits": [6, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "water", "bits": [7, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "cloud_conf", "bits": [8, 2], "values": {"0": "none", "1": "low", "2": "medium", "3": "high"}},
+        {"name": "shadow_conf", "bits": [10, 2], "values": {"0": "none", "1": "low", "2": "reserved", "3": "high"}},
+        {"name": "snow_conf", "bits": [12, 2], "values": {"0": "none", "1": "low", "2": "reserved", "3": "high"}},
+        {"name": "cirrus_conf", "bits": [14, 2], "values": {"0": "none", "1": "low", "2": "reserved", "3": "high"}}
+      ],
+      "flags": [
+        {"name": "dilated_cloud", "field": "dilated_cloud", "in": [1], "label": "Dilated cloud (buffer around cloud)"},
+        {"name": "cirrus", "field": "cirrus", "in": [1], "label": "Cirrus (high confidence, Landsat 8/9)"},
+        {"name": "cloud", "field": "cloud", "in": [1], "label": "Cloud"},
+        {"name": "shadow", "field": "shadow", "in": [1], "label": "Cloud shadow"},
+        {"name": "snow", "field": "snow", "in": [1], "label": "Snow"},
+        {"name": "water", "field": "water", "in": [1], "label": "Water"},
+        {"name": "not_clear", "field": "clear", "in": [0], "label": "Not flagged clear (any cloud or dilated cloud)"},
+        {"name": "cloud_conf_medium", "field": "cloud_conf", "in": [2], "label": "Cloud confidence medium"},
+        {"name": "cloud_conf_high", "field": "cloud_conf", "in": [3], "label": "Cloud confidence high"},
+        {"name": "shadow_conf_high", "field": "shadow_conf", "in": [3], "label": "Cloud shadow confidence high"},
+        {"name": "cirrus_conf_high", "field": "cirrus_conf", "in": [3], "label": "Cirrus confidence high"},
+        {"name": "snow_conf_high", "field": "snow_conf", "in": [3], "label": "Snow/ice confidence high"}
+      ],
+      "presets": {
+        "clear": ["dilated_cloud", "cirrus", "cloud", "shadow", "snow"],
+        "clear_land": ["dilated_cloud", "cirrus", "cloud", "shadow", "snow", "water"],
+        "strict": ["dilated_cloud", "cirrus", "cloud", "shadow", "snow", "cloud_conf_medium", "cloud_conf_high"],
+        "cloud_only": ["cloud", "shadow"]
+      },
+      "default_preset": "clear"
+    },
+    "landsat_c2_sr_qa_aerosol": {
+      "title": "Landsat 8/9 Collection 2 SR_QA_AEROSOL",
+      "layer": "SR_QA_AEROSOL",
+      "dtype": "uint8",
+      "fill": [1],
+      "fill_rule": {"field": "fill", "in": [1]},
+      "filename_hints": ["_SR_QA_AEROSOL"],
+      "source": "USGS LSDS-1619, SR_QA_AEROSOL table (bits 3-4 unused)",
+      "gee": {"collections": ["LANDSAT/LC08/C02/T1_L2", "LANDSAT/LC09/C02/T1_L2"], "band": "SR_QA_AEROSOL"},
+      "fields": [
+        {"name": "fill", "bits": [0, 1], "values": {"0": "image", "1": "fill"}},
+        {"name": "valid_retrieval", "bits": [1, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "water", "bits": [2, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "interpolated", "bits": [5, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "aerosol", "bits": [6, 2], "values": {"0": "climatology", "1": "low", "2": "medium", "3": "high"}}
+      ],
+      "flags": [
+        {"name": "aerosol_high", "field": "aerosol", "in": [3], "label": "High aerosol"},
+        {"name": "aerosol_medium", "field": "aerosol", "in": [2], "label": "Medium aerosol"},
+        {"name": "no_retrieval", "field": "valid_retrieval", "in": [0], "label": "No valid aerosol retrieval"},
+        {"name": "interpolated", "field": "interpolated", "in": [1], "label": "Aerosol interpolated"},
+        {"name": "water", "field": "water", "in": [1], "label": "Water"}
+      ],
+      "presets": {
+        "clear": ["aerosol_high"],
+        "strict": ["aerosol_high", "aerosol_medium"]
+      },
+      "default_preset": "clear"
+    },
+    "modis_mod09_state_1km": {
+      "title": "MODIS MOD09GA / MYD09GA state_1km (Collection 6.1)",
+      "layer": "state_1km",
+      "dtype": "uint16",
+      "fill": [],
+      "filename_hints": ["MOD09GA", "MYD09GA", "state_1km"],
+      "source": "MODIS Surface Reflectance User's Guide C6.1, Table 13 (1 km state QA); matches the Earth Engine MODIS/061/MOD09GA band table",
+      "gee": {"collections": ["MODIS/061/MOD09GA", "MODIS/061/MYD09GA"], "band": "state_1km"},
+      "fields": [
+        {"name": "cloud_state", "bits": [0, 2], "values": {"0": "clear", "1": "cloudy", "2": "mixed", "3": "not set, assumed clear"}},
+        {"name": "shadow", "bits": [2, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "land_water", "bits": [3, 3], "values": {"0": "shallow ocean", "1": "land", "2": "ocean coastlines and lake shorelines", "3": "shallow inland water", "4": "ephemeral water", "5": "deep inland water", "6": "continental/moderate ocean", "7": "deep ocean"}},
+        {"name": "aerosol", "bits": [6, 2], "values": {"0": "climatology", "1": "low", "2": "average", "3": "high"}},
+        {"name": "cirrus", "bits": [8, 2], "values": {"0": "none", "1": "small", "2": "average", "3": "high"}},
+        {"name": "internal_cloud", "bits": [10, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "internal_fire", "bits": [11, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "mod35_snow", "bits": [12, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "adjacent", "bits": [13, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "salt_pan", "bits": [14, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "internal_snow", "bits": [15, 1], "values": {"0": "no", "1": "yes"}}
+      ],
+      "flags": [
+        {"name": "cloudy", "field": "cloud_state", "in": [1], "label": "Cloudy"},
+        {"name": "mixed", "field": "cloud_state", "in": [2], "label": "Mixed cloud"},
+        {"name": "shadow", "field": "shadow", "in": [1], "label": "Cloud shadow"},
+        {"name": "not_land", "field": "land_water", "in": [0, 2, 3, 4, 5, 6, 7], "label": "Not land (any water class)"},
+        {"name": "aerosol_high", "field": "aerosol", "in": [3], "label": "High aerosol"},
+        {"name": "cirrus_average", "field": "cirrus", "in": [2], "label": "Average cirrus"},
+        {"name": "cirrus_high", "field": "cirrus", "in": [3], "label": "High cirrus"},
+        {"name": "internal_cloud", "field": "internal_cloud", "in": [1], "label": "Internal cloud algorithm flag"},
+        {"name": "fire", "field": "internal_fire", "in": [1], "label": "Internal fire algorithm flag"},
+        {"name": "snow", "field": "mod35_snow", "in": [1], "label": "MOD35 snow/ice"},
+        {"name": "internal_snow", "field": "internal_snow", "in": [1], "label": "Internal snow mask"},
+        {"name": "adjacent", "field": "adjacent", "in": [1], "label": "Adjacent to cloud"},
+        {"name": "salt_pan", "field": "salt_pan", "in": [1], "label": "Salt pan"}
+      ],
+      "presets": {
+        "clear": ["cloudy", "mixed", "shadow", "cirrus_high", "internal_cloud", "snow", "adjacent", "aerosol_high"],
+        "clear_land": ["cloudy", "mixed", "shadow", "cirrus_high", "internal_cloud", "snow", "adjacent", "aerosol_high", "not_land"],
+        "cloud_only": ["cloudy", "mixed", "shadow"]
+      },
+      "default_preset": "clear"
+    },
+    "modis_mod13_detailed_qa": {
+      "title": "MODIS MOD13Q1 / MOD13A1 / MYD13 vegetation index DetailedQA (Collection 6.1)",
+      "layer": "DetailedQA",
+      "dtype": "uint16",
+      "fill": [65535],
+      "filename_hints": ["MOD13", "MYD13", "VI_Quality", "DetailedQA"],
+      "source": "MODIS Vegetation Index User's Guide C6.1, Table 5 (VI Quality); matches the Earth Engine MODIS/061/MOD13Q1 band table",
+      "gee": {"collections": ["MODIS/061/MOD13Q1", "MODIS/061/MOD13A1", "MODIS/061/MYD13Q1"], "band": "DetailedQA"},
+      "fields": [
+        {"name": "vi_quality", "bits": [0, 2], "values": {"0": "good quality", "1": "produced, check other QA", "2": "probably cloudy", "3": "not produced, other reasons"}},
+        {"name": "usefulness", "bits": [2, 4], "values": {"0": "highest", "1": "lower", "2": "decreasing", "3": "decreasing", "4": "decreasing", "5": "decreasing", "6": "decreasing", "7": "decreasing", "8": "decreasing", "9": "decreasing", "10": "decreasing", "11": "decreasing", "12": "lowest", "13": "quality so low it is not useful", "14": "L1B data faulty", "15": "not useful, other reasons"}},
+        {"name": "aerosol", "bits": [6, 2], "values": {"0": "climatology", "1": "low", "2": "intermediate", "3": "high"}},
+        {"name": "adjacent_cloud", "bits": [8, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "brdf_corrected", "bits": [9, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "mixed_clouds", "bits": [10, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "land_water", "bits": [11, 3], "values": {"0": "shallow ocean", "1": "land", "2": "ocean coastlines and lake shorelines", "3": "shallow inland water", "4": "ephemeral water", "5": "deep inland water", "6": "moderate or continental ocean", "7": "deep ocean"}},
+        {"name": "snow_ice", "bits": [14, 1], "values": {"0": "no", "1": "yes"}},
+        {"name": "shadow", "bits": [15, 1], "values": {"0": "no", "1": "yes"}}
+      ],
+      "flags": [
+        {"name": "check_other_qa", "field": "vi_quality", "in": [1], "label": "VI produced, check other QA"},
+        {"name": "probably_cloudy", "field": "vi_quality", "in": [2], "label": "Probably cloudy"},
+        {"name": "not_produced", "field": "vi_quality", "in": [3], "label": "VI not produced"},
+        {"name": "low_usefulness", "field": "usefulness", "in": [12, 13, 14, 15], "label": "Usefulness lowest or not useful"},
+        {"name": "aerosol_high", "field": "aerosol", "in": [3], "label": "High aerosol"},
+        {"name": "adjacent_cloud", "field": "adjacent_cloud", "in": [1], "label": "Adjacent cloud detected"},
+        {"name": "mixed_clouds", "field": "mixed_clouds", "in": [1], "label": "Mixed clouds"},
+        {"name": "not_land", "field": "land_water", "in": [0, 2, 3, 4, 5, 6, 7], "label": "Not land (any water class)"},
+        {"name": "snow", "field": "snow_ice", "in": [1], "label": "Possible snow/ice"},
+        {"name": "shadow", "field": "shadow", "in": [1], "label": "Possible shadow"}
+      ],
+      "presets": {
+        "clear": ["probably_cloudy", "not_produced", "low_usefulness", "aerosol_high", "adjacent_cloud", "mixed_clouds", "snow", "shadow"],
+        "good_only": ["check_other_qa", "probably_cloudy", "not_produced"],
+        "clear_land": ["probably_cloudy", "not_produced", "low_usefulness", "aerosol_high", "adjacent_cloud", "mixed_clouds", "snow", "shadow", "not_land"]
+      },
+      "default_preset": "clear"
+    },
+    "modis_mod13_summary_qa": {
+      "title": "MODIS MOD13 vegetation index SummaryQA (pixel reliability)",
+      "layer": "SummaryQA",
+      "dtype": "int16",
+      "fill": [-1],
+      "filename_hints": ["pixel_reliability", "SummaryQA"],
+      "source": "MODIS Vegetation Index User's Guide C6.1, Table 4 (pixel reliability). Earth Engine stores it as SummaryQA",
+      "gee": {"collections": ["MODIS/061/MOD13Q1", "MODIS/061/MOD13A1"], "band": "SummaryQA"},
+      "fields": [
+        {"name": "reliability", "bits": [0, 2], "values": {"0": "good", "1": "marginal", "2": "snow/ice", "3": "cloudy"}}
+      ],
+      "flags": [
+        {"name": "marginal", "field": "reliability", "in": [1], "label": "Marginal data"},
+        {"name": "snow", "field": "reliability", "in": [2], "label": "Snow/ice"},
+        {"name": "cloudy", "field": "reliability", "in": [3], "label": "Cloudy"}
+      ],
+      "presets": {
+        "good_only": ["marginal", "snow", "cloudy"],
+        "clear": ["snow", "cloudy"]
+      },
+      "default_preset": "good_only"
+    },
+    "modis_mod11_qc": {
+      "title": "MODIS MOD11A1 / MOD11A2 land surface temperature QC_Day or QC_Night (Collection 6.1)",
+      "layer": "QC_Day",
+      "dtype": "uint8",
+      "fill": [],
+      "filename_hints": ["MOD11", "MYD11", "QC_Day", "QC_Night"],
+      "source": "MODIS LST Products User's Guide C6, Table 10 (QC); matches Earth Engine MODIS/061/MOD11A1",
+      "gee": {"collections": ["MODIS/061/MOD11A1", "MODIS/061/MYD11A1", "MODIS/061/MOD11A2"], "band": "QC_Day"},
+      "fields": [
+        {"name": "mandatory", "bits": [0, 2], "values": {"0": "good quality", "1": "other quality, check other QA", "2": "not produced, cloud", "3": "not produced, other"}},
+        {"name": "data_quality", "bits": [2, 2], "values": {"0": "good", "1": "other quality", "2": "TBD", "3": "TBD"}},
+        {"name": "emis_error", "bits": [4, 2], "values": {"0": "<= 0.01", "1": "<= 0.02", "2": "<= 0.04", "3": "> 0.04"}},
+        {"name": "lst_error", "bits": [6, 2], "values": {"0": "<= 1 K", "1": "<= 2 K", "2": "<= 3 K", "3": "> 3 K"}}
+      ],
+      "flags": [
+        {"name": "other_quality", "field": "mandatory", "in": [1], "label": "Other quality (check other QA)"},
+        {"name": "not_produced_cloud", "field": "mandatory", "in": [2], "label": "Not produced, cloud"},
+        {"name": "not_produced_other", "field": "mandatory", "in": [3], "label": "Not produced, other"},
+        {"name": "lst_error_gt2k", "field": "lst_error", "in": [2, 3], "label": "LST error over 2 K"},
+        {"name": "lst_error_gt1k", "field": "lst_error", "in": [1, 2, 3], "label": "LST error over 1 K"},
+        {"name": "emis_error_gt002", "field": "emis_error", "in": [2, 3], "label": "Emissivity error over 0.02"}
+      ],
+      "presets": {
+        "good_only": ["other_quality", "not_produced_cloud", "not_produced_other"],
+        "error_2k": ["not_produced_cloud", "not_produced_other", "lst_error_gt2k"]
+      },
+      "default_preset": "error_2k"
+    },
+    "ecostress_lste_qc": {
+      "title": "ECOSTRESS L2 LSTE QC (ECO_L2_LSTE / ECO_L2T_LSTE / ECO_L2G_LSTE, collection 2)",
+      "layer": "QC",
+      "dtype": "uint16",
+      "fill": [0],
+      "filename_hints": ["ECO2LSTE", "LSTE_QC", "_QC.tif"],
+      "source": "ECOSTRESS L2 User Guide V2 (ECOL2_User_Guide_V2.pdf, revision 4.2, Aug 2024), QC table. In collection 2 the QC layer carries NO cloud information (LP DAAC alert, 3 Sep 2024): bits 0-1 value 2 and bits 4-5 are 'not set'. Mask clouds with the separate cloud layer (product ecostress_cloud). Earth Engine's catalog page for NASA/ECOSTRESS/L2T_LSTE/V2 shows a different, 8-bit QC table that matches neither NASA guide; this entry follows NASA's guide",
+      "gee": {"collections": [], "band": "QC"},
+      "fields": [
+        {"name": "mandatory", "bits": [0, 2], "values": {"0": "produced by TES (may still be cloudy)", "1": "produced, degraded quality (low emissivity, low transmissivity or neural-net filled stripe)", "2": "not set", "3": "not produced (missing or bad data, or TES diverged)"}},
+        {"name": "data_quality", "bits": [2, 2], "values": {"0": "good L1B data", "1": "missing stripe pixel in bands 1 and 5", "2": "not set", "3": "missing or bad L1B data"}},
+        {"name": "cloud_ocean", "bits": [4, 2], "values": {"0": "not set; use the cloud layer", "1": "not set; use the cloud layer", "2": "not set; use the cloud layer", "3": "not set; use the cloud layer"}},
+        {"name": "iterations", "bits": [6, 2], "values": {"0": "slow convergence", "1": "nominal", "2": "nominal", "3": "fast"}},
+        {"name": "opacity", "bits": [8, 2], "values": {"0": ">= 0.3 (warm, humid air or cold land; the guide prints '>=3')", "1": "0.2 to 0.3", "2": "0.1 to 0.2", "3": "< 0.1 (dry or high altitude)"}},
+        {"name": "mmd", "bits": [10, 2], "values": {"0": "> 0.15 (silicate rocks)", "1": "0.1 to 0.15", "2": "0.03 to 0.1 (soils)", "3": "< 0.03 (vegetation, snow, water, ice)"}},
+        {"name": "emis_accuracy", "bits": [12, 2], "values": {"0": "> 0.02 (poor)", "1": "0.015 to 0.02 (marginal)", "2": "0.01 to 0.015 (good)", "3": "< 0.01 (excellent)"}},
+        {"name": "lst_accuracy", "bits": [14, 2], "values": {"0": "> 2 K (poor)", "1": "1.5 to 2 K (marginal)", "2": "1 to 1.5 K (good)", "3": "< 1 K (excellent)"}}
+      ],
+      "flags": [
+        {"name": "degraded", "field": "mandatory", "in": [1], "label": "Produced with degraded quality"},
+        {"name": "not_produced", "field": "mandatory", "in": [3], "label": "Pixel not produced"},
+        {"name": "bad_l1b", "field": "data_quality", "in": [1, 3], "label": "Missing stripe or bad L1B data"},
+        {"name": "high_opacity", "field": "opacity", "in": [0], "label": "Atmospheric opacity >= 0.3"},
+        {"name": "lst_poor", "field": "lst_accuracy", "in": [0], "label": "LST accuracy poor (> 2 K)"},
+        {"name": "lst_marginal", "field": "lst_accuracy", "in": [1], "label": "LST accuracy marginal (1.5 to 2 K)"},
+        {"name": "emis_poor", "field": "emis_accuracy", "in": [0], "label": "Emissivity accuracy poor (> 0.02)"}
+      ],
+      "presets": {
+        "produced": ["not_produced", "bad_l1b"],
+        "accurate": ["not_produced", "bad_l1b", "lst_poor"],
+        "strict": ["degraded", "not_produced", "bad_l1b", "lst_poor", "lst_marginal", "high_opacity"]
+      },
+      "default_preset": "accurate"
+    },
+    "ecostress_cloud": {
+      "title": "ECOSTRESS collection 2 cloud mask (L2T LSTE 'cloud' layer, swath 'cloud_mask', or ECO_L2_CLOUD Cloud_final)",
+      "layer": "cloud",
+      "dtype": "uint8",
+      "fill": [255],
+      "filename_hints": ["_cloud.tif", "cloud_mask", "Cloud_final", "ECO_L2_CLOUD", "ECO2CLD"],
+      "source": "ECOSTRESS L2 User Guide V2 rev 4.2: cloud_mask uint8, 1 cloud, 0 clear, fill 255 (below 2 km elevation it includes probably and confidently cloudy pixels, above 2 km only confident). This is the layer to use for clouds in collection 2; the QC layer has none",
+      "gee": {"collections": ["NASA/ECOSTRESS/L2T_LSTE/V2"], "band": "cloud"},
+      "fields": [
+        {"name": "cloud", "bits": [0, 8], "values": {"0": "clear", "1": "cloud"}}
+      ],
+      "flags": [
+        {"name": "cloud", "field": "cloud", "in": [1], "label": "Cloud"}
+      ],
+      "presets": {
+        "clear": ["cloud"]
+      },
+      "default_preset": "clear"
+    },
+    "opera_dswx_hls_wtr": {
+      "title": "OPERA DSWx-HLS v1 WTR (B01) or BWTR (B02) water classes",
+      "layer": "WTR",
+      "dtype": "uint8",
+      "fill": [255],
+      "filename_hints": ["DSWx-HLS", "_B01_WTR", "_B02_BWTR"],
+      "source": "OPERA DSWx-HLS Product Specification v1.0, WTR layer table. Checked against values in a real tile (0, 1, 2, 253, 255)",
+      "gee": {"collections": ["OPERA/DSWX/L3_V1/HLS"], "band": "B01_WTR"},
+      "fields": [
+        {"name": "class", "bits": [0, 8], "values": {"0": "not water", "1": "open water", "2": "partial surface water", "252": "snow/ice", "253": "cloud or cloud shadow", "254": "ocean masked", "255": "fill"}}
+      ],
+      "flags": [
+        {"name": "not_water", "field": "class", "in": [0], "label": "Not water"},
+        {"name": "open_water", "field": "class", "in": [1], "label": "Open water"},
+        {"name": "partial_water", "field": "class", "in": [2], "label": "Partial surface water"},
+        {"name": "snow", "field": "class", "in": [252], "label": "Snow/ice"},
+        {"name": "cloud", "field": "class", "in": [253], "label": "Cloud or cloud shadow"},
+        {"name": "ocean", "field": "class", "in": [254], "label": "Ocean masked"}
+      ],
+      "presets": {
+        "observed": ["snow", "cloud", "ocean"],
+        "water_only": ["not_water", "snow", "cloud", "ocean"],
+        "open_water_only": ["not_water", "partial_water", "snow", "cloud", "ocean"]
+      },
+      "default_preset": "water_only"
+    },
+    "opera_dswx_hls_conf": {
+      "title": "OPERA DSWx-HLS v1 CONF (B03) water confidence",
+      "layer": "CONF",
+      "dtype": "uint8",
+      "fill": [255],
+      "filename_hints": ["_B03_CONF"],
+      "source": "OPERA DSWx-HLS Product Specification v1.0, CONF layer: 0-4 water classes, +10 under cloud/shadow, +20 under snow/ice. Checked against a real tile, where 10-14 add up to the WTR cloud count",
+      "gee": {"collections": ["OPERA/DSWX/L3_V1/HLS"], "band": "B03_CONF"},
+      "fields": [
+        {"name": "class", "bits": [0, 8], "values": {"0": "not water", "1": "water, high confidence", "2": "water, moderate confidence", "3": "partial surface water, conservative", "4": "partial surface water, aggressive", "10": "not water, cloud/shadow", "11": "water high, cloud/shadow", "12": "water moderate, cloud/shadow", "13": "partial conservative, cloud/shadow", "14": "partial aggressive, cloud/shadow", "20": "not water, snow/ice", "21": "water high, snow/ice", "22": "water moderate, snow/ice", "23": "partial conservative, snow/ice", "24": "partial aggressive, snow/ice", "254": "ocean masked", "255": "fill"}}
+      ],
+      "flags": [
+        {"name": "not_water", "field": "class", "in": [0, 10, 20], "label": "Not water"},
+        {"name": "water_high", "field": "class", "in": [1, 11, 21], "label": "Water, high confidence"},
+        {"name": "water_moderate", "field": "class", "in": [2, 12, 22], "label": "Water, moderate confidence"},
+        {"name": "partial_conservative", "field": "class", "in": [3, 13, 23], "label": "Partial surface water, conservative"},
+        {"name": "partial_aggressive", "field": "class", "in": [4, 14, 24], "label": "Partial surface water, aggressive"},
+        {"name": "cloud", "field": "class", "in": [10, 11, 12, 13, 14], "label": "Under cloud or cloud shadow"},
+        {"name": "snow", "field": "class", "in": [20, 21, 22, 23, 24], "label": "Under snow/ice"},
+        {"name": "ocean", "field": "class", "in": [254], "label": "Ocean masked"}
+      ],
+      "presets": {
+        "high_conf_water": ["not_water", "water_moderate", "partial_conservative", "partial_aggressive", "cloud", "snow", "ocean"],
+        "any_water_clear": ["not_water", "cloud", "snow", "ocean"],
+        "observed": ["cloud", "snow", "ocean"]
+      },
+      "default_preset": "high_conf_water"
+    },
+    "opera_dist_alert_status": {
+      "title": "OPERA DIST-ALERT-HLS v1 VEG-DIST-STATUS",
+      "layer": "VEG-DIST-STATUS",
+      "dtype": "uint8",
+      "fill": [255],
+      "filename_hints": ["DIST-ALERT", "VEG-DIST-STATUS"],
+      "source": "OPERA DIST-ALERT-HLS Product Specification v1, VEG-DIST-STATUS table. Not checked against a real file here",
+      "gee": {"collections": [], "band": "VEG-DIST-STATUS"},
+      "fields": [
+        {"name": "status", "bits": [0, 8], "values": {"0": "no disturbance", "1": "first detection, < 50% loss", "2": "provisional, < 50% loss", "3": "confirmed, < 50% loss", "4": "first detection, >= 50% loss", "5": "provisional, >= 50% loss", "6": "confirmed, >= 50% loss", "7": "confirmed and finished, < 50% loss", "8": "confirmed and finished, >= 50% loss", "255": "no data"}}
+      ],
+      "flags": [
+        {"name": "none", "field": "status", "in": [0], "label": "No disturbance"},
+        {"name": "first_low", "field": "status", "in": [1], "label": "First detection, < 50% loss"},
+        {"name": "provisional_low", "field": "status", "in": [2], "label": "Provisional, < 50% loss"},
+        {"name": "confirmed_low", "field": "status", "in": [3, 7], "label": "Confirmed, < 50% loss (ongoing or finished)"},
+        {"name": "first_high", "field": "status", "in": [4], "label": "First detection, >= 50% loss"},
+        {"name": "provisional_high", "field": "status", "in": [5], "label": "Provisional, >= 50% loss"},
+        {"name": "confirmed_high", "field": "status", "in": [6, 8], "label": "Confirmed, >= 50% loss (ongoing or finished)"}
+      ],
+      "presets": {
+        "confirmed_only": ["none", "first_low", "provisional_low", "first_high", "provisional_high"],
+        "confirmed_high_only": ["none", "first_low", "provisional_low", "confirmed_low", "first_high", "provisional_high"],
+        "any_disturbance": ["none"]
+      },
+      "default_preset": "confirmed_only"
+    }
+  }
+}

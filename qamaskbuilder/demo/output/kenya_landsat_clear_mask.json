@@ -1,0 +1,107 @@
+{
+ "input": "demo/data/LC08_L2SP_169060_20241104_20241113_02_T1_QA_PIXEL_crop.tif",
+ "output": "demo/output/kenya_landsat_clear_mask.tif",
+ "product": "landsat_c2_qa_pixel",
+ "drop": [
+  "dilated_cloud",
+  "cirrus",
+  "cloud",
+  "shadow",
+  "snow"
+ ],
+ "keep": [],
+ "buffer": 1,
+ "crs": {
+  "input_epsg": 32636,
+  "output_epsg": 32636,
+  "needed": false,
+  "applied": false,
+  "reason": "not an HLS/OPERA product, CRS left as is",
+  "note": "EPSG:32636 with negative northings; relabel as EPSG:32736 and add 10,000,000 m to Y"
+ },
+ "mask": {
+  "usable": 1557321,
+  "masked": 692679,
+  "nodata": 0,
+  "usable_share_of_valid": 0.6921
+ },
+ "flags": {
+  "valid_pixels": 2250000,
+  "fill_pixels": 0,
+  "flags": [
+   {
+    "flag": "dilated_cloud",
+    "label": "Dilated cloud (buffer around cloud)",
+    "pixels": 169135,
+    "share_of_valid": 0.0752
+   },
+   {
+    "flag": "cirrus",
+    "label": "Cirrus (high confidence, Landsat 8/9)",
+    "pixels": 105147,
+    "share_of_valid": 0.0467
+   },
+   {
+    "flag": "cloud",
+    "label": "Cloud",
+    "pixels": 280346,
+    "share_of_valid": 0.1246
+   },
+   {
+    "flag": "shadow",
+    "label": "Cloud shadow",
+    "pixels": 254060,
+    "share_of_valid": 0.1129
+   },
+   {
+    "flag": "snow",
+    "label": "Snow",
+    "pixels": 0,
+    "share_of_valid": 0.0
+   },
+   {
+    "flag": "water",
+    "label": "Water",
+    "pixels": 360,
+    "share_of_valid": 0.0002
+   },
+   {
+    "flag": "not_clear",
+    "label": "Not flagged clear (any cloud or dilated cloud)",
+    "pixels": 449481,
+    "share_of_valid": 0.1998
+   },
+   {
+    "flag": "cloud_conf_medium",
+    "label": "Cloud confidence medium",
+    "pixels": 20788,
+    "share_of_valid": 0.0092
+   },
+   {
+    "flag": "cloud_conf_high",
+    "label": "Cloud confidence high",
+    "pixels": 280346,
+    "share_of_valid": 0.1246
+   },
+   {
+    "flag": "shadow_conf_high",
+    "label": "Cloud shadow confidence high",
+    "pixels": 254060,
+    "share_of_valid": 0.1129
+   },
+   {
+    "flag": "cirrus_conf_high",
+    "label": "Cirrus confidence high",
+    "pixels": 105147,
+    "share_of_valid": 0.0467
+   },
+   {
+    "flag": "snow_conf_high",
+    "label": "Snow/ice confidence high",
+    "pixels": 0,
+    "share_of_valid": 0.0
+   }
+  ]
+ },
+ "style": "demo/output/kenya_landsat_clear_mask.qml"
+}
