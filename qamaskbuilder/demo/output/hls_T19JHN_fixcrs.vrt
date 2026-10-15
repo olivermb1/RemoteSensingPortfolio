@@ -1,0 +1,7 @@
+<VRTDataset rasterXSize="3660" rasterYSize="3660">
+  <SRS>EPSG:32719</SRS>
+  <GeoTransform>799980.0, 30.0, 0.0, 7300000.0, 0.0, -30.0</GeoTransform>
+  <VRTRasterBand dataType="Byte" band="1"><NoDataValue>255.0</NoDataValue>
+    <SimpleSource><SourceFilename relativeToVRT="0">/mnt/attach/project-files/tools/qamaskbuilder/demo/data/HLS.L30.T19JHN.2024279T141847.v2.0.Fmask.tif</SourceFilename><SourceBand>1</SourceBand></SimpleSource>
+  </VRTRasterBand>
+</VRTDataset>

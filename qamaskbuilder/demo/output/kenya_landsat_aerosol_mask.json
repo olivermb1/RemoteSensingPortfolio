@@ -1,0 +1,61 @@
+{
+ "input": "demo/data/LC08_L2SP_169060_20241104_20241113_02_T1_SR_QA_AEROSOL_crop.tif",
+ "output": "demo/output/kenya_landsat_aerosol_mask.tif",
+ "product": "landsat_c2_sr_qa_aerosol",
+ "drop": [
+  "aerosol_high"
+ ],
+ "keep": [],
+ "buffer": 0,
+ "crs": {
+  "input_epsg": 32636,
+  "output_epsg": 32636,
+  "needed": false,
+  "applied": false,
+  "reason": "not an HLS/OPERA product, CRS left as is",
+  "note": "EPSG:32636 with negative northings; relabel as EPSG:32736 and add 10,000,000 m to Y"
+ },
+ "mask": {
+  "usable": 1664096,
+  "masked": 585904,
+  "nodata": 0,
+  "usable_share_of_valid": 0.7396
+ },
+ "flags": {
+  "valid_pixels": 2250000,
+  "fill_pixels": 0,
+  "flags": [
+   {
+    "flag": "aerosol_high",
+    "label": "High aerosol",
+    "pixels": 585904,
+    "share_of_valid": 0.2604
+   },
+   {
+    "flag": "aerosol_medium",
+    "label": "Medium aerosol",
+    "pixels": 820167,
+    "share_of_valid": 0.3645
+   },
+   {
+    "flag": "no_retrieval",
+    "label": "No valid aerosol retrieval",
+    "pixels": 2024874,
+    "share_of_valid": 0.8999
+   },
+   {
+    "flag": "interpolated",
+    "label": "Aerosol interpolated",
+    "pixels": 2000000,
+    "share_of_valid": 0.8889
+   },
+   {
+    "flag": "water",
+    "label": "Water",
+    "pixels": 0,
+    "share_of_valid": 0.0
+   }
+  ]
+ },
+ "style": "demo/output/kenya_landsat_aerosol_mask.qml"
+}

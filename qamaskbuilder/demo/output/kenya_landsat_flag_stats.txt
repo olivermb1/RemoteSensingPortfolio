@@ -1,0 +1,13 @@
+landsat_c2_qa_pixel: 2250000 valid pixels, 0 fill
+  dilated_cloud            7.52%  Dilated cloud (buffer around cloud)
+  cirrus                   4.67%  Cirrus (high confidence, Landsat 8/9)
+  cloud                   12.46%  Cloud
+  shadow                  11.29%  Cloud shadow
+  snow                     0.00%  Snow
+  water                    0.02%  Water
+  not_clear               19.98%  Not flagged clear (any cloud or dilated cloud)
+  cloud_conf_medium        0.92%  Cloud confidence medium
+  cloud_conf_high         12.46%  Cloud confidence high
+  shadow_conf_high        11.29%  Cloud shadow confidence high
+  cirrus_conf_high         4.67%  Cirrus confidence high
+  snow_conf_high           0.00%  Snow/ice confidence high

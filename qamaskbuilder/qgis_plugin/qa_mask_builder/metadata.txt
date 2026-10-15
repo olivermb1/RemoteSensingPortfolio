@@ -1,0 +1,17 @@
+[general]
+name=QA Mask Builder
+qgisMinimumVersion=3.28
+qgisMaximumVersion=4.99
+supportsQt6=True
+description=Build clean masks from NASA quality layers: HLS Fmask, Landsat QA_PIXEL, MODIS, ECOSTRESS, OPERA DSWx and DIST.
+about=Pick a product, tick the quality flags to drop, get a styled mask. One list of bit definitions drives this plugin, a Python command line and an Earth Engine script. Also fixes the HLS southern-hemisphere CRS label (EPSG:326xx to 327xx) without resampling.
+version=0.1.0
+author=QA Mask Builder contributors
+email=noreply@example.org
+tags=nasa,hls,landsat,modis,ecostress,opera,cloud mask,quality,processing
+category=Analysis
+experimental=True
+hasProcessingProvider=yes
+homepage=https://example.org/qamaskbuilder
+repository=https://example.org/qamaskbuilder
+tracker=https://example.org/qamaskbuilder/issues

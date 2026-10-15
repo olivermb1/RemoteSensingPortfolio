@@ -1,0 +1,86 @@
+{
+ "input": "demo/data/OPERA_L3_DSWx-HLS_T19JHN_20241005T141847Z_L8_30_v1.0_B03_CONF.tif",
+ "output": "demo/output/dswx_T19JHN_high_conf_water.tif",
+ "product": "opera_dswx_hls_conf",
+ "drop": [
+  "not_water",
+  "water_moderate",
+  "partial_conservative",
+  "partial_aggressive",
+  "cloud",
+  "snow",
+  "ocean"
+ ],
+ "keep": [],
+ "buffer": 0,
+ "crs": {
+  "input_epsg": 32619,
+  "output_epsg": 32719,
+  "needed": true,
+  "new_epsg": 32719,
+  "y_shift": 10000000.0,
+  "reason": "EPSG:32619 with negative northings; relabel as EPSG:32719 and add 10,000,000 m to Y",
+  "applied": true
+ },
+ "mask": {
+  "usable": 98510,
+  "masked": 13296953,
+  "nodata": 137,
+  "usable_share_of_valid": 0.0074
+ },
+ "flags": {
+  "valid_pixels": 13395463,
+  "fill_pixels": 137,
+  "flags": [
+   {
+    "flag": "not_water",
+    "label": "Not water",
+    "pixels": 13260755,
+    "share_of_valid": 0.9899
+   },
+   {
+    "flag": "water_high",
+    "label": "Water, high confidence",
+    "pixels": 98521,
+    "share_of_valid": 0.0074
+   },
+   {
+    "flag": "water_moderate",
+    "label": "Water, moderate confidence",
+    "pixels": 354,
+    "share_of_valid": 0.0
+   },
+   {
+    "flag": "partial_conservative",
+    "label": "Partial surface water, conservative",
+    "pixels": 4553,
+    "share_of_valid": 0.0003
+   },
+   {
+    "flag": "partial_aggressive",
+    "label": "Partial surface water, aggressive",
+    "pixels": 31280,
+    "share_of_valid": 0.0023
+   },
+   {
+    "flag": "cloud",
+    "label": "Under cloud or cloud shadow",
+    "pixels": 1536256,
+    "share_of_valid": 0.1147
+   },
+   {
+    "flag": "snow",
+    "label": "Under snow/ice",
+    "pixels": 0,
+    "share_of_valid": 0.0
+   },
+   {
+    "flag": "ocean",
+    "label": "Ocean masked",
+    "pixels": 0,
+    "share_of_valid": 0.0
+   }
+  ]
+ },
+ "style": "demo/output/dswx_T19JHN_high_conf_water.qml"
+}
