@@ -1,0 +1,9 @@
+class,class_name,pixels,after_erosion,after_purity,used,outlier_share,spread,ndvi_median,warnings
+10,Tree cover,122747,56413,55856,53185,0.0478,0.3186,0.596,
+20,Shrubland,32735,5169,4995,4765,0.046,0.1707,0.55,
+30,Grassland,136644,69964,69307,68661,0.0093,0.2669,0.365,
+40,Cropland,159445,74648,73487,72808,0.0092,0.2864,0.34,
+50,Built-up,63150,20985,20072,19887,0.0092,0.1903,0.181,
+60,Bare / sparse vegetation,1839,333,324,324,0.0,0.3376,0.122,
+80,Permanent water bodies,73305,71340,71327,55310,0.2246,0.4315,-0.069,
+90,Herbaceous wetland,573,14,315,272,0.1365,0.0919,0.563,erosion skipped: class too small or thin

@@ -1,0 +1,9 @@
+,Tree cover,Shrubland,Grassland,Cropland,Built-up,Bare / sparse vegetation,Permanent water bodies,Herbaceous wetland
+Tree cover,0.0,1.271,1.643,1.849,1.977,1.933,2.0,1.524
+Shrubland,1.271,0.0,1.491,1.87,1.988,1.94,2.0,1.63
+Grassland,1.643,1.491,0.0,0.957,1.861,1.835,2.0,1.893
+Cropland,1.849,1.87,0.957,0.0,1.766,1.875,2.0,1.973
+Built-up,1.977,1.988,1.861,1.766,0.0,1.367,2.0,1.993
+Bare / sparse vegetation,1.933,1.94,1.835,1.875,1.367,0.0,1.999,1.982
+Permanent water bodies,2.0,2.0,2.0,2.0,2.0,1.999,0.0,2.0
+Herbaceous wetland,1.524,1.63,1.893,1.973,1.993,1.982,2.0,0.0
