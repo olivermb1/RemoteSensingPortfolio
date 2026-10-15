@@ -1,0 +1,17 @@
+[general]
+name=Time Profile
+qgisMinimumVersion=3.28
+qgisMaximumVersion=4.99
+supportsQt6=True
+description=Click the map (or select points/polygons) and get a chart of NDVI or any index or band through time, from a folder of HLS, Sentinel-2, Landsat or dated GeoTIFF scenes.
+about=Cloud-masked time series in a dock: point or polygon, many indices (NDVI, EVI, NDMI, MNDWI, NBR ... or your own formula), several places compared on one chart, a smooth line that breaks at long cloudy gaps, flagged single-date spikes, and a season-by-season view for comparing years. Reads HLS v2.0 (Fmask), Sentinel-2 L2A (SCL), Landsat Collection 2 (QA_PIXEL) and any GeoTIFF with a date in its name. Only the pixels under the point or polygon are read. Needs nothing beyond what QGIS ships. A Processing tool does the same for a whole layer and writes CSVs.
+version=0.1.0
+author=Time Profile contributors
+email=noreply@example.org
+tags=time series,ndvi,hls,sentinel-2,landsat,phenology,profile,chart,cloud mask
+category=Raster
+experimental=True
+hasProcessingProvider=yes
+homepage=https://example.org/timeprofile
+repository=https://example.org/timeprofile
+tracker=https://example.org/timeprofile/issues

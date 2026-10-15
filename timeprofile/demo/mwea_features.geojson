@@ -1,0 +1,117 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Paddies, north block"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       37.351236,
+       -0.648784
+      ],
+      [
+       37.351954,
+       -0.648784
+      ],
+      [
+       37.351954,
+       -0.649507
+      ],
+      [
+       37.351235,
+       -0.649507
+      ],
+      [
+       37.351236,
+       -0.648784
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Paddies, west block"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       37.333985,
+       -0.654204
+      ],
+      [
+       37.335063,
+       -0.654204
+      ],
+      [
+       37.335063,
+       -0.655289
+      ],
+      [
+       37.333985,
+       -0.655289
+      ],
+      [
+       37.333985,
+       -0.654204
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Village and plots"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       37.326796,
+       -0.662341
+      ],
+      [
+       37.329491,
+       -0.662341
+      ],
+      [
+       37.32949,
+       -0.665054
+      ],
+      [
+       37.326795,
+       -0.665054
+      ],
+      [
+       37.326796,
+       -0.662341
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Single pixel, west block"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.336769,
+     -0.657008
+    ]
+   }
+  }
+ ]
+}
