@@ -1,0 +1,18 @@
+mcp>=1.10          # MCP server library (1.x and 2.x both work)
+# what the tools need between them
+numpy
+scipy
+rasterio>=1.3
+pyproj
+shapely>=2
+geopandas
+pyarrow            # Overture buildings, places and admin zones
+matplotlib         # maps and charts
+requests
+h5py               # NISAR and ECOSTRESS files
+fsspec             # droughtcheck temperatures (NASA POWER)
+zarr<3
+aiohttp
+# optional
+earthaccess        # NASA Earthdata downloads (HLS, OPERA DSWx/DIST, ECOSTRESS, NISAR)
+climate-indices>=2.3
