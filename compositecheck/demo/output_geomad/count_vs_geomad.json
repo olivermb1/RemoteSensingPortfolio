@@ -1,0 +1,11 @@
+{
+ "pixels": 198024,
+ "geomad_count_median": 27.0,
+ "ours_median": 28.0,
+ "difference_median": 0.0,
+ "difference_p10_p90": [
+  0.0,
+  1.0
+ ],
+ "correlation": 0.9973567620618834
+}

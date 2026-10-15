@@ -1,0 +1,102 @@
+{
+ "method": "external",
+ "source_is_exact": false,
+ "period": [
+  "2024-01-01",
+  "2024-06-30"
+ ],
+ "target_date": "2024-03-31",
+ "scenes": 72,
+ "landsat_scenes": 0,
+ "sentinel2_scenes": 72,
+ "pixels": 198024,
+ "pixels_with_no_clear_obs": 0,
+ "criterion1_observations": {
+  "median_clear": 28.0,
+  "p10_clear": 24.0,
+  "share_below_5": 0.0,
+  "median_max_gap_days": 15.0,
+  "share_gap_over_60_days": 0.0
+ },
+ "criterion4_target_distance": {
+  "mean_doyd": 49.328843978507656,
+  "median_doyd": 55.0
+ },
+ "criterion5_doy_spread": {
+  "doy_sd_area": 50.76088294603655
+ },
+ "dominance": {
+  "top_scene_index": 12,
+  "top_share": 0.20114733567648366,
+  "effective_scenes": 11.436614560756656,
+  "scenes_used": 62,
+  "dominated": false,
+  "threshold": 0.5,
+  "top_scene": "S2B_36MZE_20240131_0_L2A",
+  "top_scene_suspect": false
+ },
+ "selected_outliers": {
+  "share_of_pixels": 0.001918959318062457,
+  "z_threshold": 3.5
+ },
+ "sensor": {
+  "median_landsat_share": 0.0,
+  "composite_from_landsat": 0.0
+ },
+ "landsat_vs_sentinel2": {
+  "reference": "Ju et al. 2025, RSE 324:114723: HLS v2.0 residual differences < 4.2% for red, NIR, SWIR1, SWIR2",
+  "threshold": 0.042,
+  "composite_level": {},
+  "share_pixels_over_threshold": null,
+  "pairs_max_days": 1,
+  "pairs_min_shared_clear": 0.5,
+  "pairs": []
+ },
+ "composite_file": "/home/claude/compositecheck/demo/data/geomad_2024H1.tif",
+ "version": "0.1.0",
+ "settings": {
+  "stack": "demo/data/manifest.csv",
+  "start": "2024-01-01",
+  "end": "2024-06-30",
+  "target": "2024-03-31",
+  "method": "medoid",
+  "composite": "demo/data/geomad_2024H1.tif",
+  "composite_bands": "1,2,3,4,5,6",
+  "composite_scale": 0.0001,
+  "bbox": null,
+  "sensors": "S",
+  "fmask_bits": "0,1,2,3",
+  "dilate": 1,
+  "dominance": 0.5,
+  "pair_days": 1,
+  "pair_min_share": 0.5,
+  "outlier_z": 3.5,
+  "no_composite_out": false,
+  "title": "Nakuru, Kenya: DE Africa GeoMAD H1 2024 vs its Sentinel-2 scenes",
+  "out": "demo/output_geomad"
+ },
+ "seconds": 24.0,
+ "findings": [
+  {
+   "level": "warn",
+   "check": "suspect scenes",
+   "text": "21% of composite pixels come from 12 scenes that fail the outlier screen."
+  },
+  {
+   "level": "ok",
+   "check": "dominance",
+   "text": "The largest single scene (S2B_36MZE_20240131_0_L2A) supplies 20% of the composite; the composite behaves like 11.4 equal scenes."
+  }
+ ],
+ "layers": {
+  "NCLEAR": "clear observations in the period (Francini criterion 1; FORCE INF NUM)",
+  "MAX_GAP": "longest stretch with no clear observation, days, including the period edges",
+  "SRC_SCENE": "1-based scene number the composite pixel came from (0 = none); proxy for median composites",
+  "SRC_DOY": "day of year of the source observation (FORCE INF DOY)",
+  "DOYD": "days between source observation and target date (Francini criterion 4; FORCE INF DOYD)",
+  "SRC_SENSOR": "sensor of the source observation: 1 Landsat, 2 Sentinel-2 (FORCE INF SEN)",
+  "LANDSAT_SHARE": "share of the pixel's clear observations that are Landsat",
+  "SRC_SCENE_SHARE": "share of the whole area that came from this pixel's source scene (dominance)",
+  "SRC_OUTLIER": "1 if the source observation is a robust outlier in the visible bands, 0 if not, 255 unknown"
+ }
+}
