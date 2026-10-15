@@ -1,0 +1,12 @@
+setting,whole_area_ha,Nyakach_ha,Nyando_ha,Karachuonyo_ha
+"default: Otsu, drop 3 dB, loose -14",1088,628,273,165
+threshold -16 dB,1094,631,273,165
+threshold -18 dB,1104,640,273,164
+drop 2 dB,1100,634,278,165
+drop 4 dB,1042,607,259,160
+loose -12 dB,1626,860,476,240
+loose -13 dB,1386,757,388,207
+loose -15 dB,787,490,165,122
+threshold only (no change test),787,490,165,122
+smooth 3 px,1168,640,321,171
+smooth 9 px,973,597,205,157

@@ -1,0 +1,3 @@
+# Large demo rasters left out of git; python demo/fetch_demo_data.py downloads them again
+demo/data/s1/
+demo/data/s2/

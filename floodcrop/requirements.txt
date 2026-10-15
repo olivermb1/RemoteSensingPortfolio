@@ -1,0 +1,12 @@
+numpy
+rasterio
+pyproj
+matplotlib
+# fetch zones (Overture):
+pyarrow
+shapely
+# optional: OPERA DSWx download (Earthdata login), shapefile/GPKG zones
+# earthaccess
+# fiona
+# tests
+pytest
