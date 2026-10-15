@@ -1,0 +1,20 @@
+# Python build junk
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# GDAL sidecar files
+*.aux.xml
+
+# Built QGIS plugin zips (rebuild with each tool's make_plugin.py)
+*.zip
+
+# Large demo rasters left out of git; each tool's demo script downloads or rebuilds them
+classspectra/demo/data/nakuru_s2_20240215.tif
+classspectra/demo/data/nakuru_s2_30m.tif
+compositecheck/demo/data/
+
+.DS_Store
