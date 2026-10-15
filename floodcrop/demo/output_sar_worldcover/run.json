@@ -1,0 +1,78 @@
+{
+  "tool": "floodcrop",
+  "version": "0.1",
+  "run_at": "2026-10-15T16:29:43+00:00",
+  "source": "sar",
+  "event": [
+    "S1_VV_20240506.tif"
+  ],
+  "baseline": [
+    "S1_VV_20240224.tif",
+    "S1_VV_20240307.tif"
+  ],
+  "cropland": "worldcover_2021_v200.tif",
+  "crop_preset": "worldcover",
+  "permanent": "wofs_alltime_frequency.tif",
+  "permanent_threshold": 0.8,
+  "event_combine": "any",
+  "baseline_combine": "any",
+  "grid": {
+    "crs": "EPSG:4326",
+    "shape": [
+      1850,
+      2500
+    ],
+    "res": [
+      0.0002,
+      0.0002
+    ]
+  },
+  "options": {
+    "cloud_kind": "scl",
+    "scale": 1.0,
+    "sar_method": "change",
+    "drop_db": 3.0,
+    "loose_db": -14.0,
+    "smooth": 5
+  },
+  "baseline_detail": [
+    {
+      "file": "S1_VV_20240224.tif",
+      "threshold_db": -15.0,
+      "threshold_from": "otsu"
+    },
+    {
+      "file": "S1_VV_20240307.tif",
+      "threshold_db": -15.0,
+      "threshold_from": "otsu"
+    }
+  ],
+  "event_detail": [
+    {
+      "file": "S1_VV_20240506.tif",
+      "threshold_db": -15.0,
+      "threshold_from": "otsu"
+    }
+  ],
+  "zones": "zones_subcounties.geojson",
+  "zones_crs": "EPSG:4326",
+  "totals": {
+    "zone_ha": 227715.58,
+    "observed_pct": 100.0,
+    "crop_ha": 18697.11,
+    "crop_observed_pct": 100.0,
+    "flooded_crop_ha": 279.8,
+    "flooded_crop_partial_ha": 0.0,
+    "flooded_crop_pct": 1.5,
+    "flooded_all_ha": 1725.76,
+    "standing_water_crop_ha": 5.2,
+    "baseline_unobserved_crop_ha": 0.0
+  },
+  "pixels": {
+    "dry": 4029885,
+    "new open water (flood)": 35051,
+    "new partial water (flood)": 0,
+    "water before the event / permanent": 560064,
+    "not observed": 0
+  }
+}

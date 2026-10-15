@@ -1,0 +1,7 @@
+zone,zone_ha,observed_pct,crop_ha,crop_observed_pct,flooded_crop_ha,flooded_crop_partial_ha,flooded_crop_pct,flooded_all_ha,standing_water_crop_ha,baseline_unobserved_crop_ha
+Kisumu,157775.99,100.0,93777.8,100.0,1025.4,0.0,1.09,1787.6,145.71,0.0
+Homa Bay,21342.46,100.0,13561.69,100.0,177.4,0.0,1.31,225.79,17.56,0.0
+Nandi,508.32,100.0,312.12,100.0,0.15,0.0,0.05,0.15,0.0,0.0
+Kericho,48003.74,100.0,35237.21,100.0,0.0,0.0,0.0,0.2,0.0,0.0
+Nyamira,85.08,100.0,60.05,100.0,0.0,0.0,0.0,0.0,0.0,0.0
+(whole grid),227715.58,100.0,142948.86,100.0,1202.95,0.0,0.84,2013.74,163.27,0.0
