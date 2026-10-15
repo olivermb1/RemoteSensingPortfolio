@@ -1,0 +1,48 @@
+{
+ "rules": {
+  "level": "confirmed",
+  "min_loss": 50,
+  "since": "2020-12-31",
+  "min_patch_px": 3,
+  "forest_mask": null
+ },
+ "as_of": "2025-02-15",
+ "granules": {
+  "30NWM": "OPERA_L3_DIST-ALERT-HLS_T30NWM_20250207T103019Z_20250209T103019Z_S2A_30_v1",
+  "30NXM": "OPERA_L3_DIST-ALERT-HLS_T30NXM_20250208T103001Z_20250210T103001Z_S2A_30_v1"
+ },
+ "new_patches": 4,
+ "new_loss_ha": 40.05,
+ "new_loss_in_areas_ha": 40.05,
+ "areas_with_new_loss": 4,
+ "run": 2,
+ "tiles": [
+  {
+   "tile": "30NWM",
+   "granule": "OPERA_L3_DIST-ALERT-HLS_T30NWM_20250207T103019Z_20250209T103019Z_S2A_30_v1",
+   "sensing": "2025-02-07T10:30:19",
+   "unchanged_since_last_run": false,
+   "new_patches": 3,
+   "new_loss_ha": 30.96,
+   "below_min_patch_ha": 4.14,
+   "earlier_reported_ha": 27.0,
+   "withdrawn_ha": 0.0,
+   "valid_pct": 100.0
+  },
+  {
+   "tile": "30NXM",
+   "granule": "OPERA_L3_DIST-ALERT-HLS_T30NXM_20250208T103001Z_20250210T103001Z_S2A_30_v1",
+   "sensing": "2025-02-08T10:30:01",
+   "unchanged_since_last_run": false,
+   "new_patches": 2,
+   "new_loss_ha": 18.18,
+   "below_min_patch_ha": 3.78,
+   "earlier_reported_ha": 12.69,
+   "withdrawn_ha": 0.0,
+   "valid_pct": 99.0
+  }
+ ],
+ "rule_changes": {},
+ "io": "rasterio",
+ "dry_run": false
+}

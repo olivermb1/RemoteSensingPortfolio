@@ -1,0 +1,65 @@
+{
+ "tool": "distwatch",
+ "runs": [
+  {
+   "run": 1,
+   "time": "2026-10-15T16:14:46+00:00",
+   "rules": {
+    "level": "confirmed",
+    "min_loss": 50,
+    "since": "2020-12-31",
+    "min_patch_px": 3,
+    "forest_mask": null
+   },
+   "as_of": "2025-01-15",
+   "granules": {
+    "30NWM": "OPERA_L3_DIST-ALERT-HLS_T30NWM_20250108T103021Z_20250110T103021Z_S2A_30_v1",
+    "30NXM": "OPERA_L3_DIST-ALERT-HLS_T30NXM_20250109T102959Z_20250111T102959Z_S2A_30_v1"
+   },
+   "new_patches": 3,
+   "new_loss_ha": 39.69,
+   "new_loss_in_areas_ha": 39.69,
+   "areas_with_new_loss": 1
+  },
+  {
+   "run": 2,
+   "time": "2026-10-15T16:14:50+00:00",
+   "rules": {
+    "level": "confirmed",
+    "min_loss": 50,
+    "since": "2020-12-31",
+    "min_patch_px": 3,
+    "forest_mask": null
+   },
+   "as_of": "2025-02-15",
+   "granules": {
+    "30NWM": "OPERA_L3_DIST-ALERT-HLS_T30NWM_20250207T103019Z_20250209T103019Z_S2A_30_v1",
+    "30NXM": "OPERA_L3_DIST-ALERT-HLS_T30NXM_20250208T103001Z_20250210T103001Z_S2A_30_v1"
+   },
+   "new_patches": 4,
+   "new_loss_ha": 40.05,
+   "new_loss_in_areas_ha": 40.05,
+   "areas_with_new_loss": 4
+  },
+  {
+   "run": 3,
+   "time": "2026-10-15T16:14:54+00:00",
+   "rules": {
+    "level": "confirmed",
+    "min_loss": 50,
+    "since": "2020-12-31",
+    "min_patch_px": 3,
+    "forest_mask": null
+   },
+   "as_of": "2025-03-15",
+   "granules": {
+    "30NWM": "OPERA_L3_DIST-ALERT-HLS_T30NWM_20250309T103027Z_20250311T103027Z_S2A_30_v1",
+    "30NXM": "OPERA_L3_DIST-ALERT-HLS_T30NXM_20250310T103003Z_20250312T103003Z_S2A_30_v1"
+   },
+   "new_patches": 4,
+   "new_loss_ha": 21.33,
+   "new_loss_in_areas_ha": 21.33,
+   "areas_with_new_loss": 4
+  }
+ ]
+}

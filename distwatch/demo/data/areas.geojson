@@ -1,0 +1,203 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Forest reserve (synthetic)"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.553375,
+       6.305531
+      ],
+      [
+       -2.450311,
+       6.305433
+      ],
+      [
+       -2.450356,
+       6.262013
+      ],
+      [
+       -2.553412,
+       6.262111
+      ],
+      [
+       -2.553375,
+       6.305531
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cooperative A farms"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.575135,
+       6.229563
+      ],
+      [
+       -2.53988,
+       6.229534
+      ],
+      [
+       -2.539904,
+       6.202396
+      ],
+      [
+       -2.575156,
+       6.202425
+      ],
+      [
+       -2.575135,
+       6.229563
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Cooperative B farms"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.444972,
+       6.224015
+      ],
+      [
+       -2.407008,
+       6.223974
+      ],
+      [
+       -2.407036,
+       6.198193
+      ],
+      [
+       -2.444999,
+       6.198234
+      ],
+      [
+       -2.444972,
+       6.224015
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Overlap village lands"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.512747,
+       6.245792
+      ],
+      [
+       -2.491052,
+       6.245771
+      ],
+      [
+       -2.49107,
+       6.226775
+      ],
+      [
+       -2.512765,
+       6.226796
+      ],
+      [
+       -2.512747,
+       6.245792
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Whole supply shed"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.60084,
+       6.304213
+      ],
+      [
+       -2.404748,
+       6.304026
+      ],
+      [
+       -2.404867,
+       6.198191
+      ],
+      [
+       -2.600921,
+       6.198375
+      ],
+      [
+       -2.60084,
+       6.304213
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Farm outside the tiles"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.574984,
+       6.414101
+      ],
+      [
+       -2.569558,
+       6.414096
+      ],
+      [
+       -2.569563,
+       6.408669
+      ],
+      [
+       -2.574988,
+       6.408673
+      ],
+      [
+       -2.574984,
+       6.414101
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

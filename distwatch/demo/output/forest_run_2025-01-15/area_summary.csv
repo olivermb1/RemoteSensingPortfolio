@@ -1,0 +1,7 @@
+area,area_ha,new_loss_ha,new_patches,new_loss_pct_of_area,total_loss_ha,total_loss_pct_of_area,new_mean_loss_pct,new_first_detected,new_last_detected,flag,covered
+Whole supply shed,25395.6,12.69,1,0.05,12.69,0.05,75.8,2024-06-15,2024-06-24,NEW LOSS,True
+Forest reserve (synthetic),5475.9,0.0,0,0.0,0.0,0.0,,,,,True
+Cooperative A farms,1170.9,0.0,0,0.0,0.0,0.0,,,,,True
+Cooperative B farms,1197.9,0.0,0,0.0,0.0,0.0,,,,,True
+Overlap village lands,504.4,0.0,0,0.0,0.0,0.0,,,,,True
+Farm outside the tiles,36.0,0.0,0,0.0,0.0,0.0,,,,,False
