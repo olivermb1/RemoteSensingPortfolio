@@ -1,0 +1,7 @@
+numpy
+rasterio     # CLI; the QGIS script uses QGIS's own GDAL instead
+geopandas    # CLI: area outlines, place names
+shapely>=2
+pyarrow      # fetch-places (Overture GeoParquet on S3)
+scipy        # optional, faster labelling
+matplotlib   # optional, growth.png and map.png

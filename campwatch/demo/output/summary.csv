@@ -1,0 +1,5 @@
+unit_id,kind,footprint_ha,first_month,half_month,growth_ha_last3,observed_pct_last,area_ha,place,place_dist_m,centroid_lon,centroid_lat
+2,detected,36.5,202311,202312,0.8,100.0,91.1,Camp de réfugiés Alacha,0.0,21.60385,13.06632
+3,detected,15.4,202401,202402,0.3,100.0,39.1,Camp de réfugiés Alacha,719.0,21.59464,13.06514
+4,detected,9.4,202402,202405,0.8,100.0,20.7,Camp de réfugiés Alacha,757.0,21.61369,13.06078
+1,detected,9.1,202401,202405,0.2,100.0,24.4,Shomtorrome,678.0,21.58709,13.07351
