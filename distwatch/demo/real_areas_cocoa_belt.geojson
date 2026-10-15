@@ -1,0 +1,71 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Sefwi Wiawso area, Ghana"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.62,
+       6.1
+      ],
+      [
+       -2.38,
+       6.1
+      ],
+      [
+       -2.38,
+       6.32
+      ],
+      [
+       -2.62,
+       6.32
+      ],
+      [
+       -2.62,
+       6.1
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Soubre area, Cote d'Ivoire"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.7,
+       5.7
+      ],
+      [
+       -6.48,
+       5.7
+      ],
+      [
+       -6.48,
+       5.9
+      ],
+      [
+       -6.7,
+       5.9
+      ],
+      [
+       -6.7,
+       5.7
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

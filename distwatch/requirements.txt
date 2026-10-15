@@ -1,0 +1,6 @@
+numpy
+rasterio
+shapely>=2
+pyproj
+requests
+matplotlib  # optional, for quicklook.png
