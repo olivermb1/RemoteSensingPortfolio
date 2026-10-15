@@ -1,0 +1,4 @@
+# Only the standard library is needed. Optional:
+rasterio>=1.3   # GDAL streaming and file checks outside QGIS
+earthaccess     # easiest way to write ~/.netrc
+pytest          # tests
